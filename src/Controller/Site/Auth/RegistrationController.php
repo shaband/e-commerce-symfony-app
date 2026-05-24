@@ -25,6 +25,10 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser()) {
+            $this->addFlash('warning', 'You are already logged in.');
+            return $this->redirectToRoute('app_home');
+        }
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -45,7 +49,7 @@ class RegistrationController extends AbstractController
                     ->from(new Address('confirm@symfony.test', 'Acme'))
                     ->to((string) $user->getEmail())
                     ->subject('Please Confirm your Email')
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
+                    ->htmlTemplate('site/auth/registration/confirmation_email.html.twig')
             );
 
             // do anything else you need here, like send an email
@@ -53,7 +57,7 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('/site/auth/registration/register.html.twig', [
             'registrationForm' => $form,
         ]);
     }

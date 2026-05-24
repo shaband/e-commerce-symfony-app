@@ -8,11 +8,11 @@ use Symfony\Component\HttpFoundation\Response;
 abstract class AdminAbstractController extends AbstractController
 {
 
-    const SITE_TEMPLATE_PATH = 'site';
+    const ADMIN_TEMPLATE_PATH = 'admin';
 
     public function siteRender(string $view, array $parameters = [], ?Response $response = null)
     {
 
-        $this->render(view:static::SITE_TEMPLATE_PATH . '/' . $view,parameters:  $parameters,response:  $response);
+        $this->render(view: static::ADMIN_TEMPLATE_PATH . '/' . $view, parameters: $parameters, response: $response);
     }
 }
