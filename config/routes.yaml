@@ -9,3 +9,10 @@
 
 controllers:
     resource: routing.controllers
+
+admin_controllers:
+    resource:
+        path: ../src/Controller/Admin
+        namespace: App\Controller\Admin
+    type: attribute
+    prefix: /admin        # ← applied to ALL controllers in this dir
