@@ -10,9 +10,19 @@
 controllers:
     resource: routing.controllers
 
-admin_controllers:
-    resource:
-        path: ../src/Controller/Admin
-        namespace: App\Controller\Admin
-    type: attribute
-    prefix: /admin        # ← applied to ALL controllers in this dir
+#site_controllers:
+#    resource:
+#        path: ../src/Controller/Site
+#        namespace: App\Controller\Site
+#    type: attribute
+#    prefix: /
+#
+#admin_controllers:
+#    resource:
+#        path: ../src/Controller/Admin
+#        namespace: App\Controller\Admin
+#    type: attribute
+#    prefix: /admin
+#    name_prefix: admin_
+#
+#

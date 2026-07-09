@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Symfony_hakam.iml" filepath="$PROJECT_DIR$/.idea/Symfony_hakam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Symfony.iml" filepath="$PROJECT_DIR$/.idea/Symfony.iml" />
     </modules>
   </component>
 </project>

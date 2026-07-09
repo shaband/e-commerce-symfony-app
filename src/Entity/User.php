@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
+use App\Enum\GenderEnum;
 use App\Repository\UserRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -15,6 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    use TimestampableEntity;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -47,8 +50,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $avatar = null;
 
-    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?int $gender = null;
+    #[ORM\Column(type: Types::SMALLINT, nullable: true,enumType: GenderEnum::class)]
+    private ?GenderEnum $gender = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTime $birthdate = null;
@@ -135,7 +138,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->first_name;
     }
-
+    public function getFullName(): string
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
     public function setFirstName(string $first_name): static
     {
         $this->first_name = $first_name;
@@ -179,12 +185,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getGender(): ?int
+    public function getGender(): ?GenderEnum
     {
         return $this->gender;
     }
 
-    public function setGender(?int $gender): static
+    public function setGender(GenderEnum $gender): static
     {
         $this->gender = $gender;
 

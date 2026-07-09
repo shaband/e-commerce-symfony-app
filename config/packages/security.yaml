@@ -18,16 +18,32 @@ security:
 
     firewalls:
 
-        admin:
-            pattern: ^/admin/
-            provider: app_admin_provider
 
         dev:
             # Ensure dev tools and static assets are always allowed
             pattern: ^/(_profiler|_wdt|assets|build)/
             security: false
+
+        admin:
+            lazy: true
+            pattern: ^/admin
+            provider: app_admin_provider
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+            form_login:
+                enable_csrf: true
+                login_path: admin_login
+                check_path: admin_login
+                default_target_path: admin_home
+
+            logout:
+                path: /admin/logout
+
+                target: admin_login
         main:
             lazy: true
+            pattern: ^/
             provider: app_user_provider
 
             form_login:
@@ -50,6 +66,8 @@ security:
     access_control:
         - { path: ^/$, roles: PUBLIC_ACCESS }   # only '/' exactly
         - { path: ^/home, roles: ROLE_USER }     # must be logged in
+        - { path: ^/admin/login, roles: PUBLIC_ACCESS }   # allow login page
+        - { path: ^/admin,       roles: ROLE_USER }      # lock all /admin/*
         # - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
