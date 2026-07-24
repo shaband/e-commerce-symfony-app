@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FileField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -45,7 +46,7 @@ class UserCrudController extends AbstractCrudController
         yield TextField::new('full_name')->hideOnForm();
         yield TextField::new('first_name')->onlyOnForms();
         yield TextField::new('last_name')->onlyOnForms();
-        yield TextField::new('email');
+        yield EmailField::new('email');
         yield TextField::new('phone');
 
         yield ChoiceField::new('gender')->setChoices(GenderEnum::cases());

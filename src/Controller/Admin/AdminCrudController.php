@@ -6,6 +6,7 @@ use App\Entity\Admin;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -35,7 +36,7 @@ class AdminCrudController extends AbstractCrudController
     {
 
         yield IdField::new('id')->hideOnForm();
-        yield TextField::new('email');
+        yield EmailField::new('email');
         yield TextField::new('name');
         yield TextField::new('phone');
 

@@ -35,7 +35,7 @@ security:
                 enable_csrf: true
                 login_path: admin_login
                 check_path: admin_login
-                default_target_path: admin_home
+                default_target_path: admin
 
             logout:
                 path: /admin/logout

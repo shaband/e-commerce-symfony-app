@@ -5,31 +5,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc809fa0-2a77-4a6e-b803-b13a7c9e14e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/Auth/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Enum/GenderEnum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/auth/login/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/some/path/my-dashboard.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Symfony_hakam.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_5_1_26__7_13PM.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/admin/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/SettingFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/alerts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/avatars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/badge.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/bar-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/basic-tables.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/blank.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/buttons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/form-elements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/images.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/line-chart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/signin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/country/country-01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/country/country-02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/error/404-dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/error/404.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/auth-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/logo-dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/logo-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/shape/grid-01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/owner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/videos.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminAbstractController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.dist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.dist.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/layout/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/layout/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Controller/HomeControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Controller/IndexControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Controller/UserControllerTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +97,13 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -49,61 +113,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.000001801969592" />
-      <entry key="S5" value="1.0051149450792771" />
-      <entry key="S10" value="1.0917289206864398" />
-      <entry key="S30" value="2.622856026970057" />
-      <entry key="S60" value="5.327952852901972" />
-      <entry key="M2" value="8.912810294842497" />
-      <entry key="M5" value="14.383544876920325" />
-      <entry key="M10" value="18.074711312796886" />
-      <entry key="M15" value="19.731772183291636" />
-      <entry key="M30" value="21.684172691186276" />
-      <entry key="H1" value="22.791796483081836" />
-      <entry key="H2" value="23.419134303274987" />
-      <entry key="H4" value="25.185108251283836" />
-      <entry key="D1" value="83.56048117380095" />
-      <entry key="W1" value="467.63963031024866" />
+      <entry key="MS100" value="1.0012651833599158" />
+      <entry key="MS500" value="1.3429446490836874" />
+      <entry key="S2" value="2.438476720099694" />
+      <entry key="S5" value="3.4803360105070866" />
+      <entry key="S10" value="4.504325973975794" />
+      <entry key="S30" value="6.42230569894874" />
+      <entry key="S60" value="7.44187547705031" />
+      <entry key="M2" value="8.26141035180147" />
+      <entry key="M5" value="13.212794153333652" />
+      <entry key="M10" value="25.401048456240986" />
+      <entry key="M15" value="37.94910983558313" />
+      <entry key="M30" value="76.45289826915997" />
+      <entry key="H1" value="135.0566844094439" />
+      <entry key="H2" value="199.30452918915526" />
+      <entry key="H4" value="262.57866349136407" />
+      <entry key="D1" value="543.3491111901271" />
+      <entry key="W1" value="1123.4969773061719" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.4931785848343706E-215" />
-      <entry key="MS500" value="1.2842339828197095E-43" />
-      <entry key="S2" value="1.8986070174230054E-11" />
-      <entry key="S5" value="5.637807309754181E-5" />
-      <entry key="S10" value="0.009402343424497233" />
-      <entry key="S30" value="0.32499824638712976" />
-      <entry key="S60" value="0.8388786616635093" />
-      <entry key="M2" value="1.4594352996461823" />
-      <entry key="M5" value="2.1846608837619246" />
-      <entry key="M10" value="2.5457444912300065" />
-      <entry key="M15" value="2.6854569075207997" />
-      <entry key="M30" value="2.8364910883839065" />
-      <entry key="H1" value="2.9166095993941923" />
-      <entry key="H2" value="2.9584218891183407" />
-      <entry key="H4" value="3.0021383840056672" />
-      <entry key="D1" value="12.822736696009894" />
-      <entry key="W1" value="119.84189012805223" />
+      <entry key="MS100" value="3.178183391535808E-25" />
+      <entry key="MS500" value="1.2834758540410652E-5" />
+      <entry key="S2" value="0.08163451599421925" />
+      <entry key="S5" value="0.564442660116958" />
+      <entry key="S10" value="1.1945190882118355" />
+      <entry key="S30" value="2.319963315050651" />
+      <entry key="S60" value="2.947374689238686" />
+      <entry key="M2" value="3.3996240889831704" />
+      <entry key="M5" value="3.7509969439491253" />
+      <entry key="M10" value="4.2717056222581755" />
+      <entry key="M15" value="5.310244270224202" />
+      <entry key="M30" value="9.456832975473263" />
+      <entry key="H1" value="16.23395208379153" />
+      <entry key="H2" value="24.948557156513726" />
+      <entry key="H4" value="35.22344005047962" />
+      <entry key="D1" value="70.56054742532858" />
+      <entry key="W1" value="182.95170791701074" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0016197647379188314" />
-      <entry key="MS500" value="0.27662433827306804" />
-      <entry key="S2" value="0.7252265086330555" />
-      <entry key="S5" value="0.8845344607299467" />
-      <entry key="S10" value="1.0349542312190412" />
-      <entry key="S30" value="2.8545004744274634" />
-      <entry key="S60" value="6.048023525870514" />
-      <entry key="M2" value="10.266438831234044" />
-      <entry key="M5" value="16.503523467385193" />
-      <entry key="M10" value="20.582263187371765" />
-      <entry key="M15" value="22.39020620213109" />
-      <entry key="M30" value="24.50628931602757" />
-      <entry key="H1" value="25.70098555916565" />
-      <entry key="H2" value="26.37378479823941" />
-      <entry key="H4" value="28.18533673312829" />
-      <entry key="D1" value="96.3825082952367" />
-      <entry key="W1" value="587.4808743837839" />
+      <entry key="MS100" value="0.9013604792135006" />
+      <entry key="MS500" value="1.1556820358701556" />
+      <entry key="S2" value="2.1534572162659056" />
+      <entry key="S5" value="3.69079852873598" />
+      <entry key="S10" value="5.422083826905874" />
+      <entry key="S30" value="8.590876882802085" />
+      <entry key="S60" value="10.295481104874268" />
+      <entry key="M2" value="11.607353002098142" />
+      <entry key="M5" value="16.939680550894067" />
+      <entry key="M10" value="29.657361912322152" />
+      <entry key="M15" value="43.24474363847279" />
+      <entry key="M30" value="85.89436620366915" />
+      <entry key="H1" value="151.2765649114371" />
+      <entry key="H2" value="224.24149268009296" />
+      <entry key="H4" value="297.79326524428546" />
+      <entry key="D1" value="613.9064439749245" />
+      <entry key="W1" value="1306.447603360102" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php">
@@ -242,6 +306,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
       <path value="$PROJECT_DIR$/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/zenstruck/assert" />
+      <path value="$PROJECT_DIR$/vendor/zenstruck/foundry" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -263,7 +332,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/run/media/shaband/HDD1/code/php/Symfony/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -302,7 +371,8 @@
       <workItem from="1781291670665" duration="5856000" />
       <workItem from="1781643911484" duration="8227000" />
       <workItem from="1781931685235" duration="2147000" />
-      <workItem from="1783244428239" duration="17733000" />
+      <workItem from="1783244428239" duration="24429000" />
+      <workItem from="1783924774861" duration="14608000" />
     </task>
     <servers />
   </component>
