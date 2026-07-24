@@ -4,10 +4,10 @@ namespace App\DataFixtures;
 
 use App\Entity\Setting;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Persistence\ObjectManager;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class SettingFixtures extends Fixture
+class SettingFixtures extends Fixture implements FixtureGroupInterface
 {
     public function load(ObjectManager $manager): void
     {
@@ -30,7 +30,10 @@ class SettingFixtures extends Fixture
             ],
         ];
         foreach ($data as $datum) {
-            $setting = new Setting();
+            $setting = $manager->getRepository(Setting::class)->findOneBy(['keyName' => $datum['name']]);
+            if ($setting == null) {
+                $setting = new Setting();
+            }
             $setting->setKeyName($datum['name']);
             $setting->setType($datum['type']);
             $setting->setValue($datum['value']);
@@ -39,5 +42,10 @@ class SettingFixtures extends Fixture
             $manager->persist($setting);
         }
         $manager->flush();
+    }
+
+    public static function getGroups(): array
+    {
+        return ['main'];
     }
 }

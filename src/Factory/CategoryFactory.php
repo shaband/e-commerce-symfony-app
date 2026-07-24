@@ -17,6 +17,7 @@ final class CategoryFactory extends PersistentObjectFactory
      */
     public function __construct()
     {
+        parent::__construct();
     }
 
     #[\Override]
@@ -42,18 +43,26 @@ final class CategoryFactory extends PersistentObjectFactory
         ];
     }
 
-    public  function parent()
+    public function parent(): self
     {
-
+        return $this->with(['is_parent' => true]);
     }
+
+    public function child(): self
+    {
+        return $this->with([
+            'is_parent' => false,
+            'parent'=>CategoryFactory::new()->parent()->create(),
+        ]);
+    }
+
     /**
      * @see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization
      */
     #[\Override]
     protected function initialize(): static
     {
-        return $this
-            // ->afterInstantiate(function(Category $category): void {})
-        ;
+        return $this// ->afterInstantiate(function(Category $category): void {})
+            ;
     }
 }
