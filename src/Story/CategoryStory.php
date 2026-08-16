@@ -11,6 +11,8 @@ final class CategoryStory extends Story
 {
     public function build(): void
     {
-        CategoryFactory::new()->child()->many(5)->create();
+        CategoryFactory::new()->item()->many(3)->create();
+        CategoryFactory::new()->group()->many(3)->create();
+        CategoryFactory::new()->main()->many(3)->create();
     }
 }

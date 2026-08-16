@@ -1,0 +1,13 @@
+{% if categories is not empty %}
+    <label class="form-control-label" for="Category_parent">Parent Category</label>
+    <div class="form-widget">
+        <select id="Category_parent" name="Category[parent]" data-field-target="parent_category_choice"
+                data-ea-autocomplete-render-items-as-html="false" class="form-select">
+            <option value="" disabled selected></option>
+            {% for category in categories %}
+                <option value="{{ category.getID() }}">{{ category.getName() }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    {% endif %}

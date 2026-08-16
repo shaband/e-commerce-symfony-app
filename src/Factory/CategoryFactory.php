@@ -3,6 +3,7 @@
 namespace App\Factory;
 
 use App\Entity\Category;
+use App\Enum\CategoryGroupEnum;
 use Zenstruck\Foundry\Persistence\PersistentObjectFactory;
 
 /**
@@ -37,22 +38,33 @@ final class CategoryFactory extends PersistentObjectFactory
         return [
             'name' => self::faker()->text(255),
             'is_active' => self::faker()->boolean(),
-            'is_parent' => false,
+            'Category_group' => CategoryGroupEnum::Item,
             'description' => self::faker()->sentence(),
             'cover' => self::faker()->imageUrl(),
         ];
     }
 
-    public function parent(): self
-    {
-        return $this->with(['is_parent' => true]);
-    }
-
-    public function child(): self
+    public function main(): self
     {
         return $this->with([
-            'is_parent' => false,
-            'parent'=>CategoryFactory::new()->parent()->create(),
+            'category_group' => CategoryGroupEnum::Main,
+            'parent' => null,
+        ]);
+    }
+
+    public function group(): self
+    {
+        return $this->with([
+            'category_group' => CategoryGroupEnum::Group,
+            'parent' => CategoryFactory::new()->main()->create(),
+        ]);
+    }
+
+    public function item(): self
+    {
+        return $this->with([
+            'category_group' => CategoryGroupEnum::Item,
+            'parent' => CategoryFactory::new()->group()->create(),
         ]);
     }
 
@@ -62,7 +74,6 @@ final class CategoryFactory extends PersistentObjectFactory
     #[\Override]
     protected function initialize(): static
     {
-        return $this// ->afterInstantiate(function(Category $category): void {})
-            ;
+        return $this;
     }
 }

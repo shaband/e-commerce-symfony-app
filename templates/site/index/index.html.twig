@@ -1,20 +1,86 @@
-{% extends 'base.html.twig' %}
+{% extends 'site/layout/base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block content %}
+    <!--====== App Content ======-->
+    <div class="app-content">
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        <!--====== Anti Flash White Background ======-->
+        <div class="bg-anti-flash-white">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <!--====== White Container ======-->
+            <div class="white-container">
+                <div class="container">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/run/media/shaband/HDD1/code/php/Symfony/src/Controller/IndexController.php</code></li>
-        <li>Your template at <code>/run/media/shaband/HDD1/code/php/Symfony/templates/index/index.html.twig</code></li>
-    </ul>
-</div>
+                    {% include 'site/index/_slider.html.twig' %}
+
+                </div>
+
+                <!--====== Section 1 ======-->
+
+                {% include 'site/index/_category.html.twig' %}
+                {% include 'site/index/_category_tab.html.twig' %}
+
+
+                <!--====== Section 10 ======-->
+                <div class="u-s-p-b-60">
+
+                    <!--====== Section Content ======-->
+                    <div class="section__content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="service u-h-100">
+                                        <div class="service__icon"><i class="fas fa-truck"></i></div>
+                                        <div class="service__info-wrap">
+
+                                            <span class="service__info-text-1">Free Shipping</span>
+
+                                            <span class="service__info-text-2">Free shipping on all US order or order above $200</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="service u-h-100">
+                                        <div class="service__icon"><i class="fas fa-redo"></i></div>
+                                        <div class="service__info-wrap">
+
+                                            <span class="service__info-text-1">Shop with Confidence</span>
+
+                                            <span class="service__info-text-2">Our Protection covers your purchase from click to delivery</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                    <div class="service u-h-100">
+                                        <div class="service__icon"><i class="fas fa-headphones-alt"></i></div>
+                                        <div class="service__info-wrap">
+
+                                            <span class="service__info-text-1">24/7 Help Center</span>
+
+                                            <span class="service__info-text-2">Round-the-clock assistance for a smooth shopping experience</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--====== End - Section Content ======-->
+                </div>
+                <!--====== End - Section 10 ======-->
+
+                <!--====== Section 11 ======-->
+                {% include 'site/index/_testimonials.html.twig' %}
+                <!--====== End - Section 11 ======-->
+                <!--====== Section 12 ======-->
+                {% include 'site/index/_sponsors.html.twig' %}
+
+                <!--====== End - Section 12 ======-->
+            </div>
+
+
+            <!--====== End - White Container ======-->
+        </div>
+        <!--====== End - Anti Flash White Background ======-->
+    </div>
+    <!--====== End - App Content ======-->
 {% endblock %}

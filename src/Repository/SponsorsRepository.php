@@ -16,21 +16,15 @@ class SponsorsRepository extends ServiceEntityRepository
         parent::__construct($registry, Sponsors::class);
     }
 
-    //    /**
-    //     * @return Sponsors[] Returns an array of Sponsors objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('s')
-    //            ->andWhere('s.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('s.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+        /**
+         * @return Sponsors[] Returns an array of Sponsors objects
+         */
+    public function findAllActive(array|null $orderBy = null ,?int $limit = null, ?int $offset = null): array
+    {
 
+        return $this->findBy(criteria: ['isActive' => true], orderBy: $orderBy, limit: $limit, offset: $offset);
+
+    }
     //    public function findOneBySomeField($value): ?Sponsors
     //    {
     //        return $this->createQueryBuilder('s')

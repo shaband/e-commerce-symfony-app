@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Enum\CategoryGroupEnum;
+use App\Enum\GenderEnum;
 use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -13,6 +15,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 class Category
 {
     use TimestampableEntity;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -24,8 +27,8 @@ class Category
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?bool $is_active = null;
+    #[ORM\Column(options: ['default' => true])]
+    private ?bool $is_active = true;
 
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'children')]
     private ?self $parent = null;
@@ -39,14 +42,20 @@ class Category
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cover = null;
 
-    #[ORM\Column(nullable: true,options: ['default' => 0])]
-    private ?bool $is_parent = null;
+    #[ORM\Column(name: 'category_group', enumType: CategoryGroupEnum::class, options: ['default' => CategoryGroupEnum::Main])]
+    private CategoryGroupEnum $category_group = CategoryGroupEnum::Main;
 
+    /**
+     * @var Collection<int, HomeCategorySection>
+     */
+    #[ORM\OneToMany(targetEntity: HomeCategorySection::class, mappedBy: 'categroryID')]
+    private Collection $homeCategorySections;
 
 
     public function __construct()
     {
         $this->children = new ArrayCollection();
+        $this->homeCategorySections = new ArrayCollection();
     }
 
 
@@ -145,14 +154,44 @@ class Category
         return $this;
     }
 
-    public function isParent(): ?bool
+    public function getCategoryGroup(): CategoryGroupEnum
     {
-        return $this->is_parent;
+        return $this->category_group;
     }
 
-    public function setIsParent(?bool $is_parent): static
+    public function setCategoryGroup(CategoryGroupEnum $category_group): static
     {
-        $this->is_parent = $is_parent;
+        $this->category_group = $category_group;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, HomeCategorySection>
+     */
+    public function getHomeCategorySections(): Collection
+    {
+        return $this->homeCategorySections;
+    }
+
+    public function addHomeCategorySection(HomeCategorySection $homeCategorySection): static
+    {
+        if (!$this->homeCategorySections->contains($homeCategorySection)) {
+            $this->homeCategorySections->add($homeCategorySection);
+            $homeCategorySection->setCategroryID($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHomeCategorySection(HomeCategorySection $homeCategorySection): static
+    {
+        if ($this->homeCategorySections->removeElement($homeCategorySection)) {
+            // set the owning side to null (unless already changed)
+            if ($homeCategorySection->getCategroryID() === $this) {
+                $homeCategorySection->setCategroryID(null);
+            }
+        }
 
         return $this;
     }

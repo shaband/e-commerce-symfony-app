@@ -1,5 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        settings: '@App\Service\SettingsProvider'
 
 when@test:
     twig:

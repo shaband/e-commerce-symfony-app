@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Category;
+use App\Enum\CategoryGroupEnum;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -40,4 +41,15 @@ class CategoryRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+    public function getParentCategories()
+    {
+        $this->createQueryBuilder('c')
+            ->leftJoin('c.children', 'children')
+            ->leftJoin('c.parent', 'parent')
+            ->addSelect('children','parent')
+            ->andWhere('c.category_group != :category_group')
+            ->setParameter('category_group', CategoryGroupEnum::Item)
+            ->getQuery()
+            ->getResult();
+    }
 }

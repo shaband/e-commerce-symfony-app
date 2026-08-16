@@ -1,0 +1,24 @@
+<div class="u-s-p-b-60">
+
+    <!--====== Section Content ======-->
+    <div class="section__content">
+        <div class="container">
+
+            <!--====== Brand Slider ======-->
+            <div class="slider-fouc">
+                <div class="owl-carousel" id="brand-slider" data-item="5">
+                    {% for sponsor in sponsors %}
+                    <div class="brand-slide">
+
+                        <a href="#">
+
+                            <img src="{{ asset(sponsor.logo) }}" alt="{{ sponsor.name }}"></a></div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <!--====== End - Brand Slider ======-->
+        </div>
+    </div>
+    <!--====== End - Section Content ======-->
+</div>

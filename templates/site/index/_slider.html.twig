@@ -1,0 +1,31 @@
+{% if sliders is not empty %}
+<!--====== Primary Slider ======-->
+<div class="s-skeleton s-skeleton--h-600 s-skeleton--bg-black">
+    <div class="owl-carousel primary-style-2" id="hero-slider">
+
+        {% for slider in sliders %}
+        <div class="hero-slide hero-slide--{{ slider.id }}">
+            <div class="primary-style-2-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="slider-content slider-content--animation">
+
+                            <span class="content-span-1 u-c-white">{{ slider.title }}</span>
+
+                            <span class="content-span-2 u-c-white">{{ slider.subTitle }}</span>
+
+                            <span
+                                class="content-span-3 u-c-white">{{ slider.description }}</span>
+
+                            <a class="shop-now-link btn--e-brand" href="{{ slider.url }}">SHOP
+                                NOW</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+<!--====== End - Primary Slider ======-->
+{% endif %}

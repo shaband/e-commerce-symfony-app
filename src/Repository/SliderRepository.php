@@ -40,4 +40,15 @@ class SliderRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+    /**
+     * @param int|null $limit
+     * @param int|null $offset
+     * @return Slider[]
+     */
+
+    public function findAllActive(array|null $orderBy = null ,?int $limit = null, ?int $offset = null): array
+    {
+        return $this->findBy(criteria: ['isActive' => true], orderBy: $orderBy, limit: $limit, offset: $offset);
+    }
 }
