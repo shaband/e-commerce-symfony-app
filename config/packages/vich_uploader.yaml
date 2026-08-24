@@ -5,26 +5,26 @@ vich_uploader:
         type: attribute
     mappings:
         slider_images:
-            uri_prefix: /uploads/slider-images
+            uri_prefix: "%env(AWS_ENDPOINT)%/%env(S3_UPLOADS_BUCKET)%/slider-images"
             upload_destination: slider_images.storage
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
         category_images:
-            uri_prefix: /uploads/category-images
+            uri_prefix: "%env(AWS_ENDPOINT)%/%env(S3_UPLOADS_BUCKET)%/category-images"
             upload_destination: category_images.storage
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
         sponsor_images:
-            uri_prefix: /uploads/sponsor-images
+            uri_prefix: "%env(AWS_ENDPOINT)%/%env(S3_UPLOADS_BUCKET)%/sponsor-images"
             upload_destination: sponsor_images.storage
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
         testimonial_images:
-            uri_prefix: /uploads/testimonial-images
+            uri_prefix: "%env(AWS_ENDPOINT)%/%env(S3_UPLOADS_BUCKET)%/testimonial-images"
             upload_destination: testimonial_images.storage
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
 
         product_images:
-            uri_prefix: /uploads/product-images
+            uri_prefix: "%env(AWS_ENDPOINT)%/%env(S3_UPLOADS_BUCKET)%/product-images"
             upload_destination: product_images.storage
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

@@ -67,42 +67,6 @@ class CategoryCrudController extends AbstractCrudController
 
         yield TextEditorField::new('description')->setRequired(false)->setColumns(12);
 
-//        yield IntegerField::new(propertyName: 'parent', label: 'parent Category')
-//            ->setColumns(12)
-//            ->setFormType(EntityType::class)
-//            ->addCssClass('parent_category')
-//            ->setFormTypeOptions([
-//                'class' => Category::class,
-//                'query_builder' => function (CategoryRepository $categoryRepository) {
-//                    /**
-//                     * @var  Category $entityInstance
-//                     */
-//                    $entityInstance = $this->getContext()?->getEntity()?->getInstance();
-//                    if ($entityInstance === null) {
-//                        return [];
-//                    }
-//                    $categoryType = $entityInstance?->getCategoryGroup();
-//                    $parentGroup = $categoryType->getParentCategory();
-//
-//                    return $categoryRepository
-//                        ->createQueryBuilder('category');
-////                        ->where('category.category_group = :categoryGroup')
-////                        ->setParameter('categoryGroup', $parentGroup);
-////                    return $categoryRepository->findBy(['category_group' => $parentGroup]);
-////                  return $this->getChoices();
-//                },
-////                'choice_loader' => new CallbackChoiceLoader( function (): array {
-////                    return $this->getChoices();
-////                }),
-//                'choice_label' => 'name',
-//                'choice_value' => function (?Category $entity): string {
-//                    return $entity ? $entity->getId() : '';
-//                },
-//            ])
-//            ->setRequired($this->getContext()->getEntity()->getInstance()?->getCategoryGroup() !== CategoryGroupEnum::Main)
-//            ->setColumns(12)
-//            ->onlyOnForms();
-
 
         yield Field::new('coverFile', 'Cover')
             ->setFormType(VichImageType::class)
