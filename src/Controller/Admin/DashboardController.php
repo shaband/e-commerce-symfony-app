@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -42,6 +43,7 @@ class DashboardController extends AbstractDashboardController
         return Dashboard::new()
             ->setTitle('Symfony')
             ->renderContentMaximized()
+
             ->setDefaultColorScheme('dark');
 
     }
@@ -66,7 +68,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Others', 'fa fa-ellipsis-v');
 
         yield MenuItem::linkTo(SliderCrudController::class, 'Sliders', 'fa fa-sliders');
-        yield MenuItem::linkTo(SponsorsCrudController::class, 'Sponsors', 'fa fa-handshake');
+        yield MenuItem::linkTo(SponsorCrudController::class, 'Sponsors', 'fa fa-handshake');
         yield MenuItem::linkTo(TestimonialCrudController::class, 'Testimonials', 'fa fa-quote-right');
 
     }

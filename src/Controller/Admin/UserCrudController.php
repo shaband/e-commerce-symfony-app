@@ -44,15 +44,15 @@ class UserCrudController extends AbstractCrudController
         yield FormField::addTab("Information General");
         yield IdField::new('id')->hideOnForm();
         yield TextField::new('full_name')->hideOnForm();
-        yield TextField::new('first_name')->onlyOnForms();
-        yield TextField::new('last_name')->onlyOnForms();
-        yield EmailField::new('email');
-        yield TextField::new('phone');
+        yield TextField::new('first_name')->onlyOnForms()->setColumns(12);
+        yield TextField::new('last_name')->onlyOnForms()->setColumns(12);
+        yield EmailField::new('email')->setColumns(12);
+        yield TextField::new('phone')->setColumns(12);
 
-        yield ChoiceField::new('gender')->setChoices(GenderEnum::cases());
-        yield DateField::new('birthdate')->renderAsChoice();
+        yield ChoiceField::new('gender')->setChoices(GenderEnum::cases())->setColumns(12);
+        yield DateField::new('birthdate')->renderAsChoice()->setColumns(12);
 
-        yield FormField::addTab("Password");
+        yield FormField::addTab("Password")->setColumns(12);
         yield TextField::new('password')->setFormType(RepeatedType::class)->setFormTypeOptions([
             'type' => PasswordType::class,
             'first_options' => ['label' => 'Password'],
@@ -60,9 +60,10 @@ class UserCrudController extends AbstractCrudController
             'invalid_message' => 'The password fields must match.',
             'mapped' => false,
         ])->setRequired($pageName === Crud::PAGE_NEW)
+            ->setColumns(12)
             ->onlyOnForms();
         yield FormField::addTab("Avatar");
-        yield ImageField::new('avatar')
+        yield ImageField::new('avatar')->setColumns(12)
             ->setBasePath('uploads/avatars/') // The public URL path used to display the image
             ->setUploadDir('public/uploads/avatars/') // The relative system path where files are saved
             ->setRequired(false)

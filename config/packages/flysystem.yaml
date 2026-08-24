@@ -1,0 +1,46 @@
+flysystem:
+    storages:
+        default.storage:
+            adapter: 'local'
+            options:
+                directory: '%kernel.project_dir%/var/storage/default'
+
+        slider_images.storage:
+            adapter: 'aws'
+            visibility: public
+            options:
+                client: Aws\S3\S3Client
+                bucket: '%env(S3_UPLOADS_BUCKET)%'
+                prefix: 'slider-images'
+
+        category_images.storage:
+            adapter: 'aws'
+            visibility: public
+            options:
+                client: Aws\S3\S3Client
+                bucket: '%env(S3_UPLOADS_BUCKET)%'
+                prefix: 'category-images'
+
+        sponsor_images.storage:
+            adapter: 'aws'
+            visibility: public
+            options:
+                client: Aws\S3\S3Client
+                bucket: '%env(S3_UPLOADS_BUCKET)%'
+                prefix: 'sponsor-images'
+
+        testimonial_images.storage:
+            adapter: 'aws'
+            visibility: public
+            options:
+                client: Aws\S3\S3Client
+                bucket: '%env(S3_UPLOADS_BUCKET)%'
+                prefix: 'testimonial-images'
+
+        product_images.storage:
+            adapter: 'aws'
+            visibility: public
+            options:
+                client: Aws\S3\S3Client
+                bucket: '%env(S3_UPLOADS_BUCKET)%'
+                prefix: 'product-images'

@@ -3,7 +3,7 @@
 namespace App\Service;
 
 use App\Repository\CategoryRepository;
-use App\Repository\SponsorsRepository;
+use App\Repository\SponsorRepository;
 use App\Repository\TestimonialRepository;
 
 class MainPageService
@@ -11,7 +11,7 @@ class MainPageService
     public function __construct(
         private TestimonialRepository $testimonialRepository,
         private CategoryRepository    $categoryRepository,
-        private SponsorsRepository    $sponsorsRepository
+        private SponsorRepository $sponsorsRepository
     )
     {
     }

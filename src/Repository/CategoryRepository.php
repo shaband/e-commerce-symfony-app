@@ -43,7 +43,7 @@ class CategoryRepository extends ServiceEntityRepository
     //    }
     public function getParentCategories()
     {
-        $this->createQueryBuilder('c')
+        return $this->createQueryBuilder('c')
             ->leftJoin('c.children', 'children')
             ->leftJoin('c.parent', 'parent')
             ->addSelect('children','parent')

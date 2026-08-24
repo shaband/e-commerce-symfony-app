@@ -26,12 +26,13 @@ doctrine:
                 dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Translatable/Entity"
                 alias: GedmoTranslatable # (optional) it will default to the name set for the mapping
                 is_bundle: false
-            gedmo_translator:
-                    type: attribute
-                    prefix: Gedmo\Translator\Entity
-                    dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Translator/Entity"
-                    alias: GedmoTranslator # (optional) it will default to the name set for the mapping
-                    is_bundle: false
+#        type: attribute
+#        prefix: Gedmo\Translator\Entity
+#        dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Translator/Entity"
+#        alias: GedmoTranslator # (optional) it will default to the name set for the mapping
+#        is_bundle:
+#            false     gedmo_translator:
+
 #            gedmo_loggable:
 #                    type: attribute
 #                    prefix: Gedmo\Loggable\Entity

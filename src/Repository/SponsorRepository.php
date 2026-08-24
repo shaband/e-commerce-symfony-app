@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Sponsors;
+use App\Entity\Sponsor;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Sponsors>
+ * @extends ServiceEntityRepository<Sponsor>
  */
-class SponsorsRepository extends ServiceEntityRepository
+class SponsorRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Sponsors::class);
+        parent::__construct($registry, Sponsor::class);
     }
 
         /**
-         * @return Sponsors[] Returns an array of Sponsors objects
+         * @return Sponsor[] Returns an array of Sponsor objects
          */
     public function findAllActive(array|null $orderBy = null ,?int $limit = null, ?int $offset = null): array
     {
@@ -25,7 +25,7 @@ class SponsorsRepository extends ServiceEntityRepository
         return $this->findBy(criteria: ['isActive' => true], orderBy: $orderBy, limit: $limit, offset: $offset);
 
     }
-    //    public function findOneBySomeField($value): ?Sponsors
+    //    public function findOneBySomeField($value): ?Sponsor
     //    {
     //        return $this->createQueryBuilder('s')
     //            ->andWhere('s.exampleField = :val')

@@ -22,10 +22,10 @@ class TestimonialCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield IdField::new('id')->hideOnForm();
-        yield TextField::new('name');
-        yield TextareaField::new('description');
-        yield BooleanField::new('is_active');
-        yield ImageField::new('avatar')
+        yield TextField::new('name')->setColumns(12);
+        yield TextareaField::new('description')->setColumns(12);
+        yield BooleanField::new('is_active')->setColumns(12);
+        yield ImageField::new('avatar')->setColumns(12)
             ->setBasePath('uploads/testimonial/avatars/') // The public URL path used to display the image
             ->setUploadDir('public/uploads/testimonial/avatars/') // The relative system path where files are saved
             ->setRequired(false)

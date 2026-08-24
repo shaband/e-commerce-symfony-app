@@ -3,7 +3,7 @@
 namespace App\Controller\Site;
 
 use App\Repository\SliderRepository;
-use App\Repository\SponsorsRepository;
+use App\Repository\SponsorRepository;
 use App\Repository\TestimonialRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ final class IndexController extends AbstractController
     public function index(
         SliderRepository $sliderRepository,
         TestimonialRepository $testimonialRepository,
-        SponsorsRepository $sponsorsRepository
+        SponsorRepository $sponsorsRepository
     ): Response
     {
         return $this->render('site/index/index.html.twig', [

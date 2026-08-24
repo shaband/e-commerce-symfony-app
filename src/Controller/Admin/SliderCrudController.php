@@ -22,12 +22,12 @@ class SliderCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield IdField::new('id')->hideOnForm();
-        yield TextField::new('title');
-        yield TextField::new('subtitle')->setRequired(false);
-        yield TextField::new('description')->setRequired(false);
-        yield BooleanField::new('is_active')->setRequired(false);
-        yield UrlField::new('url')->setRequired(false);
-        yield ImageField::new('cover')
+        yield TextField::new('title')->setColumns(12);
+        yield TextField::new('subtitle')->setRequired(false)->setColumns(12);
+        yield TextField::new('description')->setRequired(false)->setColumns(12);
+        yield BooleanField::new('is_active')->setRequired(false)->setColumns(12);
+        yield UrlField::new('url')->setRequired(false)->setColumns(12);
+        yield ImageField::new('cover')->setColumns(12)
             ->setBasePath('uploads/sliders/') // The public URL path used to display the image
             ->setUploadDir('public/uploads/sliders/') // The relative system path where files are saved
             ->setRequired(false)

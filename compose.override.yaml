@@ -15,4 +15,11 @@ services:
     environment:
       MP_SMTP_AUTH_ACCEPT_ANY: 1
       MP_SMTP_AUTH_ALLOW_INSECURE: 1
-###< symfony/mailer ###
+      ###< symfony/mailer ###
+  S3:
+    image: adobe/s3mock
+    ports:
+      - "9090:9090"
+    environment:
+      - COM_ADOBE_TESTING_S3MOCK_STORE_INITIAL_BUCKETS=${AWS_S3_BUCKET:-symfony}
+

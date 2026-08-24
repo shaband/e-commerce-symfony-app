@@ -8,10 +8,13 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[Vich\Uploadable]
 class Category
 {
     use TimestampableEntity;
@@ -41,21 +44,23 @@ class Category
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cover = null;
-
+    #[Vich\UploadableField(mapping: 'category_images', fileNameProperty: 'cover',)]
+    private ?File $coverFile = null;
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
+    private ?int $coverSize = null;
     #[ORM\Column(name: 'category_group', enumType: CategoryGroupEnum::class, options: ['default' => CategoryGroupEnum::Main])]
     private CategoryGroupEnum $category_group = CategoryGroupEnum::Main;
 
-    /**
-     * @var Collection<int, HomeCategorySection>
-     */
-    #[ORM\OneToMany(targetEntity: HomeCategorySection::class, mappedBy: 'categroryID')]
-    private Collection $homeCategorySections;
 
 
     public function __construct()
     {
         $this->children = new ArrayCollection();
-        $this->homeCategorySections = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return $this->Name ?? '';
     }
 
 
@@ -103,6 +108,11 @@ class Category
     public function getParent(): ?self
     {
         return $this->parent;
+    }
+
+    public function getParentName(): ?string
+    {
+        return $this->parent?->getName();
     }
 
     public function setParent(?self $parent): static
@@ -166,35 +176,26 @@ class Category
         return $this;
     }
 
-    /**
-     * @return Collection<int, HomeCategorySection>
-     */
-    public function getHomeCategorySections(): Collection
+    public function setCoverFile(?File $coverFile = null): void
     {
-        return $this->homeCategorySections;
-    }
-
-    public function addHomeCategorySection(HomeCategorySection $homeCategorySection): static
-    {
-        if (!$this->homeCategorySections->contains($homeCategorySection)) {
-            $this->homeCategorySections->add($homeCategorySection);
-            $homeCategorySection->setCategroryID($this);
+        $this->coverFile = $coverFile;
+        if ($coverFile !== null) {
+            $this->updatedAt = new \DateTime();
         }
-
-        return $this;
     }
 
-    public function removeHomeCategorySection(HomeCategorySection $homeCategorySection): static
+    public function getCoverFile(): ?File
     {
-        if ($this->homeCategorySections->removeElement($homeCategorySection)) {
-            // set the owning side to null (unless already changed)
-            if ($homeCategorySection->getCategroryID() === $this) {
-                $homeCategorySection->setCategroryID(null);
-            }
-        }
-
-        return $this;
+        return $this->coverFile;
     }
 
+    public function setImageSize(?int $imageSize): void
+    {
+        $this->coverSize = $imageSize;
+    }
 
+    public function getImageSize(): ?int
+    {
+        return $this->coverSize;
+    }
 }

@@ -5,32 +5,43 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use App\Enum\CategoryGroupEnum;
 use App\Repository\CategoryRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\ORM\QueryBuilder;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminRoute;
-use EasyCorp\Bundle\EasyAdminBundle\Collection\FieldCollection;
-use EasyCorp\Bundle\EasyAdminBundle\Collection\FilterCollection;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+
+use EasyCorp\Bundle\EasyAdminBundle\Config\KeyValueStore;
+use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+
 use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
-use EasyCorp\Bundle\EasyAdminBundle\Dto\SearchDto;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
+
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Symfony\Component\Routing\Requirement\EnumRequirement;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class CategoryCrudController extends AbstractCrudController
 {
+    public function __construct(
+        public CategoryRepository                                                 $categoryRepository,
+        #[Autowire('%env(AWS_ENDPOINT)%/%env(S3_UPLOADS_BUCKET)%')] public string $bucket
+
+    )
+    {
+
+    }
 
     public static function getEntityFqcn(): string
     {
@@ -41,33 +52,67 @@ class CategoryCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
 
-
         yield IdField::new('id')->hideOnForm();
-        yield TextField::new('name');
+        yield TextField::new('name')->setColumns(12);
 
-        yield ChoiceField::new('category_group')->setChoices(CategoryGroupEnum::cases())->setFormTypeOption('attr', [
-            'hx-get' => '/admin/category/get-categories',
-            'hx-trigger' => "change",
-            'hx-swap'=>'innerHTML',
-            'hx-target' => '.parent_category',
+        yield ChoiceField::new('category_group')
+            ->setChoices(CategoryGroupEnum::cases())
+            ->setColumns(12)
+            ->setFormTypeOption('attr', [
+                'hx-get' => '/admin/category/get-categories',
+                'hx-trigger' => 'change',
+                'hx-swap' => 'innerHTML',
+                'hx-target' => '.parent_category',
+            ]);
 
-        ]);
+        yield TextEditorField::new('description')->setRequired(false)->setColumns(12);
 
-        yield TextEditorField::new('description')->setRequired(false);
+//        yield IntegerField::new(propertyName: 'parent', label: 'parent Category')
+//            ->setColumns(12)
+//            ->setFormType(EntityType::class)
+//            ->addCssClass('parent_category')
+//            ->setFormTypeOptions([
+//                'class' => Category::class,
+//                'query_builder' => function (CategoryRepository $categoryRepository) {
+//                    /**
+//                     * @var  Category $entityInstance
+//                     */
+//                    $entityInstance = $this->getContext()?->getEntity()?->getInstance();
+//                    if ($entityInstance === null) {
+//                        return [];
+//                    }
+//                    $categoryType = $entityInstance?->getCategoryGroup();
+//                    $parentGroup = $categoryType->getParentCategory();
+//
+//                    return $categoryRepository
+//                        ->createQueryBuilder('category');
+////                        ->where('category.category_group = :categoryGroup')
+////                        ->setParameter('categoryGroup', $parentGroup);
+////                    return $categoryRepository->findBy(['category_group' => $parentGroup]);
+////                  return $this->getChoices();
+//                },
+////                'choice_loader' => new CallbackChoiceLoader( function (): array {
+////                    return $this->getChoices();
+////                }),
+//                'choice_label' => 'name',
+//                'choice_value' => function (?Category $entity): string {
+//                    return $entity ? $entity->getId() : '';
+//                },
+//            ])
+//            ->setRequired($this->getContext()->getEntity()->getInstance()?->getCategoryGroup() !== CategoryGroupEnum::Main)
+//            ->setColumns(12)
+//            ->onlyOnForms();
 
 
-        yield ChoiceField::new(propertyName: 'parent', label: 'Parent Category')
+        yield Field::new('coverFile', 'Cover')
+            ->setFormType(VichImageType::class)
             ->setRequired(false)
-            ->addCssClass('parent_category')
-            ->setChoices([])
-            ->renderAsNativeWidget()
-            ->formatValue(fn($value, Category $entity) => $entity->getParent()?->getName());
+            ->setColumns(12)
+            ->onlyOnForms();
 
-        yield ImageField::new('cover')->setBasePath('uploads/avatars/') // The public URL path used to display the image
-        ->setUploadDir('public/uploads/categories/') // The relative system path where files are saved
-        ->setRequired(false)
-            ->setUploadedFileNamePattern('[slug]-[randomhash].[extension]')
-            ->onlyOnForms();;
+        yield ImageField::new('cover')
+            ->setBasePath($this->bucket . '/category-images')
+            ->onlyOnIndex();
 
     }
 
@@ -78,7 +123,7 @@ class CategoryCrudController extends AbstractCrudController
             'methods' => ['GET'],
         ])]
     public function getCategories(
-        CategoryRepository                           $categoryRepository,
+
         #[MapQueryParameter(name: 'Category')] array $category = [],
     ): Response
     {
@@ -92,14 +137,94 @@ class CategoryCrudController extends AbstractCrudController
         $categoryType = CategoryGroupEnum::tryFrom($groupValue)
             ?? throw new BadRequestHttpException(sprintf('Invalid category_group "%s"', $groupValue));
 
-        $collection = new ArrayCollection($categoryRepository->findBy(criteria: ['category_group' => $categoryType->getParentCategory()?->value]));
-        $collection->reduce(func: function (array $accumulator, Category $item) {
+        $parentGroup = $categoryType->getParentCategory();
 
-            $accumulator[$item->getId()] = $item->getName();
-            return $accumulator;
-        }, initial: []);
+        if ($parentGroup === null) {
+            return new Response('');
+        }
 
-        return $this->render('admin/category/_parent_category.html.twig', ['categories' => $collection->toArray()]);
+        $categories = $this->categoryRepository->findBy(['category_group' => $parentGroup]);
+
+        return new Response($this->renderView('admin/category/_parent_category.html.twig', ['categories' => $categories]));
+    }
+
+    /**
+     * @return array
+     */
+    public function getChoices(?Category $category): array
+    {
+
+        if ($category == null) {
+            return [];
+        }
+        $categoryType = $category?->getCategoryGroup();
+
+        $parentGroup = $categoryType->getParentCategory();
+        if ($parentGroup === null) {
+            return [];
+        }
+        return $this->categoryRepository->findBy(['category_group' => $parentGroup]);
+    }
+
+    /**
+     * @param EntityDto<Category> $entityDto
+     * @param AdminContext<Category> $context
+     */
+    public function createNewFormBuilder(EntityDto $entityDto, KeyValueStore $formOptions, AdminContext $context): FormBuilderInterface
+    {
+
+
+        $builder = parent::createNewFormBuilder($entityDto, $formOptions, $context); // TODO: Change the autogenerated stub
+
+        return $this->addParentInputToForm($builder);
+
+    }
+
+    /**
+     * @param EntityDto<Category> $entityDto
+     * @param AdminContext<Category> $context
+     */
+    public function createEditFormBuilder(EntityDto $entityDto, KeyValueStore $formOptions, AdminContext $context): FormBuilderInterface
+    {
+        $builder = parent::createEditFormBuilder($entityDto, $formOptions, $context);
+        return $this->addParentInputToForm($builder);
+
+    }
+
+    public function addParentInputToForm($builder): FormBuilderInterface
+    {
+        // Adds the field based on the raw submitted category_group value
+        $addParentCategoryChoiceInputFromGroup = function (FormInterface $form, ?string $groupValue): void {
+            $categoryGroup = $groupValue !== null ? CategoryGroupEnum::tryFrom($groupValue) : null;
+            $parentGroup = $categoryGroup?->getParentCategory();
+
+            $choices = $parentGroup !== null
+                ? $this->categoryRepository->findBy(['category_group' => $parentGroup])
+                : [];
+
+            $form->add('parent', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name',
+                'choice_value' => 'id',
+                'choices' => $choices,
+                'row_attr' => ['class' => 'parent_category'],
+            ]);
+        };
+
+
+        $builder->addEventListener(FormEvents::POST_SET_DATA, function (FormEvent $event) use ($addParentCategoryChoiceInputFromGroup) {
+            $category = $event->getData();
+
+            $addParentCategoryChoiceInputFromGroup($event->getForm(), $category->getCategoryGroup()->value);
+
+        });
+        $builder->addEventListener(FormEvents::PRE_SUBMIT, function (FormEvent $event) use ($addParentCategoryChoiceInputFromGroup) {
+            $data = $event->getData();
+            $groupValue = $data['category_group'] ?? null;
+
+            $addParentCategoryChoiceInputFromGroup($event->getForm(), $groupValue);
+        });
+        return $builder;
     }
 
 

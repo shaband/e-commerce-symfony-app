@@ -36,9 +36,9 @@ class AdminCrudController extends AbstractCrudController
     {
 
         yield IdField::new('id')->hideOnForm();
-        yield EmailField::new('email');
-        yield TextField::new('name');
-        yield TextField::new('phone');
+        yield EmailField::new('email')->setColumns(12);
+        yield TextField::new('name')->setColumns(12);
+        yield TextField::new('phone')->setColumns(12);
 
         yield TextField::new("password")
             ->onlyOnForms()
@@ -49,13 +49,13 @@ class AdminCrudController extends AbstractCrudController
                 'second_options' => ['label' => 'Confirm Password'],
                 'invalid_message' => 'The password fields must match.',
                 'mapped' => false,
-            ]);
+            ])->setColumns(12);
         yield ImageField::new('avatar')
             ->setBasePath('uploads/avatars/') // The public URL path used to display the image
             ->setUploadDir('public/uploads/avatars/') // The relative system path where files are saved
             ->setRequired(false)
             ->setUploadedFileNamePattern('[slug]-[randomhash].[extension]')
-            ->onlyOnForms();
+            ->onlyOnForms()->setColumns(12);
 
 
     }

@@ -1,0 +1,30 @@
+vich_uploader:
+    db_driver: orm
+    storage: flysystem
+    metadata:
+        type: attribute
+    mappings:
+        slider_images:
+            uri_prefix: /uploads/slider-images
+            upload_destination: slider_images.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        category_images:
+            uri_prefix: /uploads/category-images
+            upload_destination: category_images.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        sponsor_images:
+            uri_prefix: /uploads/sponsor-images
+            upload_destination: sponsor_images.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        testimonial_images:
+            uri_prefix: /uploads/testimonial-images
+            upload_destination: testimonial_images.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        product_images:
+            uri_prefix: /uploads/product-images
+            upload_destination: product_images.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

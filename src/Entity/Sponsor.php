@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\SponsorsRepository;
+use App\Repository\SponsorRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 
-#[ORM\Entity(repositoryClass: SponsorsRepository::class)]
-class Sponsors
+#[ORM\Entity(repositoryClass: SponsorRepository::class)]
+class Sponsor
 {
     use TimestampableEntity;
 

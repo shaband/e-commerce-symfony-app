@@ -35,18 +35,18 @@ class SettingCrudController extends AbstractCrudController
         $entity = $this->getContext()->getEntity()->getInstance();
 
         // 2. Always show the key name
-        yield TextField::new('keyName', 'Setting Name')->setDisabled();
+        yield TextField::new('keyName', 'Setting Name')->setDisabled()->setColumns(12);
 
         // 3. Render the 'value' field conditionally based on the 'type' column
         if ($entity) {
             yield match ($entity->getType()) {
-                'number' => IntegerField::new('value', 'Value'),
-                'email' => EmailField::new('value', 'Value'),
-                'toggle' => BooleanField::new('value', 'Enabled / Disabled'),
-                'file' => ImageField::new('value', 'Uploaded File')
+                'number' => IntegerField::new('value', 'Value')->setColumns(12),
+                'email' => EmailField::new('value', 'Value')->setColumns(12),
+                'toggle' => BooleanField::new('value', 'Enabled / Disabled')->setColumns(12),
+                'file' => ImageField::new('value', 'Uploaded File')->setColumns(12)
                     ->setBasePath('/uploads/settings')
                     ->setUploadDir('public/uploads/settings'),
-                default => TextField::new('value', 'Value'), // handles 'text'
+                default => TextField::new('value', 'Value')->setColumns(12), // handles 'text'
             };
         }
     }
