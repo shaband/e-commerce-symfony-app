@@ -1,0 +1,32 @@
+{% extends 'site/layout/base.html.twig' %}
+ {% block content %}
+
+
+     <!--====== App Content ======-->
+     <div class="app-content">
+
+         <!--====== Section Intro ======-->
+         <div class="section__intro u-s-m-b-60">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="section__text-wrap">
+                             <h1 class="section__heading u-c-secondary">Hi!</h1>
+                             <p>To reset your password, please visit the following link</p>
+
+                             <a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+
+                             <p>This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+                             <p>Cheers!</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!--====== End - Section Intro ======-->
+
+     </div>
+     <!--====== End - App Content ======-->
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'site/layout/base.html.twig' %}
+ {% block content %}
+     <!--====== App Content ======-->
+     <div class="app-content">
+
+
+         <!--====== Section 2 ======-->
+         <div class="u-s-p-b-60">
+
+
+             <!--====== Section Content ======-->
+             <div class="section__content">
+                 <div class="container">
+                     <div class="row row--center">
+                         <div class="col-lg-6 col-md-8 u-s-m-b-30">
+                             <div class="l-f-o">
+                                 <div class="l-f-o__pad-box">
+                                     <h1 class="gl-h1">PASSWORD RESET</h1>
+
+                                     {#                                     <span class="gl-text u-s-m-b-30">Enter your email or username below and we will send you a link to reset your password.</span> #}
+                                     {#                                    <form class="l-f-o__form"> #}
+                                     {{ form_start(resetForm,{'attr': {'class': 'l-f-o__form'}}) }}
+                                     {{ form_errors(resetForm) }}
+                                     <div class="u-s-m-b-30">
+
+                                         {{ form_row(resetForm.plainPassword.first,{
+                                             'label':'NEW PASSWORD',
+                                             'label_attr':{'class':'gl-label'},
+                                             'attr':{'class':'input-text input-text--primary-style'}
+                                         }) }}
+
+                                     </div>
+                                     <div class="u-s-m-b-30">
+
+                                         {{ form_row(resetForm.plainPassword.second,{
+                                             'label':'NEW PASSWORD CONFIRMATION',
+                                             'label_attr':{'class':'gl-label'},
+                                             'attr':{'class':'input-text input-text--primary-style'}
+                                         }) }}
+                                     </div>
+                                     <div class="u-s-m-b-30">
+
+                                         <button class="btn btn--e-transparent-brand-b-2" type="submit">SUBMIT</button>
+                                     </div>
+                                     <div class="u-s-m-b-30">
+
+                                         {{ form_end(resetForm) }}
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <!--====== End - Section Content ======-->
+             </div>
+             <!--====== End - Section 2 ======-->
+         </div>
+     </div>
+     <!--====== End - App Content ======-->
+ {% endblock %}
+

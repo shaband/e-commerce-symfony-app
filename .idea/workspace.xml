@@ -4,103 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc809fa0-2a77-4a6e-b803-b13a7c9e14e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/admin/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/SettingFixtures.php" afterDir="false" />
+    <list default="true" id="fc809fa0-2a77-4a6e-b803-b13a7c9e14e9" name="Changes" comment="WIP">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.dev" beforeDir="false" afterPath="$PROJECT_DIR$/.env.dev" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Symfony.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/alerts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/avatars.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/badge.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/bar-chart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/basic-tables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/blank.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/calendar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/form-elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/images.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/line-chart.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/sidebar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/signin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/country/country-01.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/country/country-02.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/error/404-dark.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/error/404.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/grid-image/image-06.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/auth-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/logo-dark.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/logo-icon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/logo/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/product/product-05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/shape/grid-01.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/owner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-03.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-04.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/src/images/user/user-33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/videos.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/reference.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.dist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.dist.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Controller/HomeControllerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Controller/IndexControllerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Controller/UserControllerTest.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
+  </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="1852" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="PHP File" />
       </list>
     </option>
   </component>
@@ -113,61 +53,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0012651833599158" />
-      <entry key="MS500" value="1.3429446490836874" />
-      <entry key="S2" value="2.438476720099694" />
-      <entry key="S5" value="3.4803360105070866" />
-      <entry key="S10" value="4.504325973975794" />
-      <entry key="S30" value="6.42230569894874" />
-      <entry key="S60" value="7.44187547705031" />
-      <entry key="M2" value="8.26141035180147" />
-      <entry key="M5" value="13.212794153333652" />
-      <entry key="M10" value="25.401048456240986" />
-      <entry key="M15" value="37.94910983558313" />
-      <entry key="M30" value="76.45289826915997" />
-      <entry key="H1" value="135.0566844094439" />
-      <entry key="H2" value="199.30452918915526" />
-      <entry key="H4" value="262.57866349136407" />
-      <entry key="D1" value="543.3491111901271" />
-      <entry key="W1" value="1123.4969773061719" />
+      <entry key="MS100" value="1.0000348133458212" />
+      <entry key="MS500" value="1.128336193215" />
+      <entry key="S2" value="1.5985322483262203" />
+      <entry key="S5" value="1.8170615941698025" />
+      <entry key="S10" value="1.9540806820602006" />
+      <entry key="S30" value="2.347994627420153" />
+      <entry key="S60" value="2.8648735919843746" />
+      <entry key="M2" value="4.843153914992967" />
+      <entry key="M5" value="12.269732018360521" />
+      <entry key="M10" value="21.493915719102368" />
+      <entry key="M15" value="27.608294625664055" />
+      <entry key="M30" value="37.705082809310646" />
+      <entry key="H1" value="45.80110828453416" />
+      <entry key="H2" value="51.230421676136665" />
+      <entry key="H4" value="55.03873872584282" />
+      <entry key="D1" value="137.4428090121873" />
+      <entry key="W1" value="1439.8997765662616" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.178183391535808E-25" />
-      <entry key="MS500" value="1.2834758540410652E-5" />
-      <entry key="S2" value="0.08163451599421925" />
-      <entry key="S5" value="0.564442660116958" />
-      <entry key="S10" value="1.1945190882118355" />
-      <entry key="S30" value="2.319963315050651" />
-      <entry key="S60" value="2.947374689238686" />
-      <entry key="M2" value="3.3996240889831704" />
-      <entry key="M5" value="3.7509969439491253" />
-      <entry key="M10" value="4.2717056222581755" />
-      <entry key="M15" value="5.310244270224202" />
-      <entry key="M30" value="9.456832975473263" />
-      <entry key="H1" value="16.23395208379153" />
-      <entry key="H2" value="24.948557156513726" />
-      <entry key="H4" value="35.22344005047962" />
-      <entry key="D1" value="70.56054742532858" />
-      <entry key="W1" value="182.95170791701074" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.993202001728661E-74" />
+      <entry key="S2" value="5.734776795828225E-19" />
+      <entry key="S5" value="7.582717474292557E-8" />
+      <entry key="S10" value="3.8963655914302437E-4" />
+      <entry key="S30" value="0.13358570478916507" />
+      <entry key="S60" value="0.7730618910759728" />
+      <entry key="M2" value="2.6070676905810473" />
+      <entry key="M5" value="7.406877806491213" />
+      <entry key="M10" value="11.944104800995008" />
+      <entry key="M15" value="14.557477460203193" />
+      <entry key="M30" value="18.541095383024636" />
+      <entry key="H1" value="21.57367365815713" />
+      <entry key="H2" value="23.558852762307318" />
+      <entry key="H4" value="24.84585906624792" />
+      <entry key="D1" value="39.34455021160086" />
+      <entry key="W1" value="261.8346807681819" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9013604792135006" />
-      <entry key="MS500" value="1.1556820358701556" />
-      <entry key="S2" value="2.1534572162659056" />
-      <entry key="S5" value="3.69079852873598" />
-      <entry key="S10" value="5.422083826905874" />
-      <entry key="S30" value="8.590876882802085" />
-      <entry key="S60" value="10.295481104874268" />
-      <entry key="M2" value="11.607353002098142" />
-      <entry key="M5" value="16.939680550894067" />
-      <entry key="M10" value="29.657361912322152" />
-      <entry key="M15" value="43.24474363847279" />
-      <entry key="M30" value="85.89436620366915" />
-      <entry key="H1" value="151.2765649114371" />
-      <entry key="H2" value="224.24149268009296" />
-      <entry key="H4" value="297.79326524428546" />
-      <entry key="D1" value="613.9064439749245" />
-      <entry key="W1" value="1306.447603360102" />
+      <entry key="MS100" value="0.9659701902978945" />
+      <entry key="MS500" value="1.1207190111504353" />
+      <entry key="S2" value="1.595971672460537" />
+      <entry key="S5" value="1.8157909694726486" />
+      <entry key="S10" value="1.9526063365676891" />
+      <entry key="S30" value="2.4746458858668636" />
+      <entry key="S60" value="3.6218858321517984" />
+      <entry key="M2" value="7.418149622964182" />
+      <entry key="M5" value="19.62952859179405" />
+      <entry key="M10" value="33.394103749362465" />
+      <entry key="M15" value="42.12792822359551" />
+      <entry key="M30" value="56.220591152349144" />
+      <entry key="H1" value="67.35949104274128" />
+      <entry key="H2" value="74.78082850387999" />
+      <entry key="H4" value="79.88009853245724" />
+      <entry key="D1" value="176.78601900792276" />
+      <entry key="W1" value="1701.7330550121517" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php">
@@ -185,7 +125,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/stimulus-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
@@ -193,7 +132,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/type-info" />
-      <path value="$PROJECT_DIR$/vendor/symfony/ux-turbo" />
       <path value="$PROJECT_DIR$/vendor/symfony/validator" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
@@ -257,7 +195,6 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/staabm/side-effects-detector" />
       <path value="$PROJECT_DIR$/vendor/symfony/asset" />
-      <path value="$PROJECT_DIR$/vendor/symfony/asset-mapper" />
       <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
       <path value="$PROJECT_DIR$/vendor/symfony/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
@@ -311,6 +248,27 @@
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/zenstruck/assert" />
       <path value="$PROJECT_DIR$/vendor/zenstruck/foundry" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stimulus-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/ux-turbo" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-bundle" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-aws-s3-v3" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/vendor/aws/aws-crt-php" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/aws/aws-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
+      <path value="$PROJECT_DIR$/vendor/hwi/oauth-bundle" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -324,6 +282,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Composer Script.auto-scripts.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -334,22 +293,40 @@
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/run/media/shaband/HDD1/code/php/Symfony/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/run/media/shaband/HDD1/code/php/Symfony/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Symfony2.SettingsForm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/templates/site/index" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/templates/site/layout" />
       <recent name="$PROJECT_DIR$/templates/admin" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="auto-scripts" type="ComposerRunConfigurationType" factoryName="Composer Script" temporary="true">
+      <option name="pathToComposerJson" value="$PROJECT_DIR$/composer.json" />
+      <option name="script" value="auto-scripts" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Composer Script.auto-scripts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -373,11 +350,58 @@
       <workItem from="1781931685235" duration="2147000" />
       <workItem from="1783244428239" duration="24429000" />
       <workItem from="1783924774861" duration="14608000" />
+      <workItem from="1785073529709" duration="14282000" />
+      <workItem from="1786276893611" duration="4956000" />
+      <workItem from="1786284073842" duration="8138000" />
+      <workItem from="1786722798440" duration="86016000" />
+      <workItem from="1787937064673" duration="22986000" />
+      <workItem from="1788202653437" duration="3682000" />
+      <workItem from="1788207320950" duration="6244000" />
+      <workItem from="1788538103328" duration="2559000" />
     </task>
+    <task id="LOCAL-00001" summary="WIP working on home page">
+      <option name="closed" value="true" />
+      <created>1786878246491</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1786878246491</updated>
+    </task>
+    <task id="LOCAL-00002" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1787590443451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1787590443451</updated>
+    </task>
+    <task id="LOCAL-00003" summary="WIP fix issue in show image of category in edit">
+      <option name="closed" value="true" />
+      <created>1787601878424</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1787601878424</updated>
+    </task>
+    <task id="LOCAL-00004" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1788541095293</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1788541095293</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="WIP working on home page" />
+    <MESSAGE value="WIP fix issue in show image of category in edit" />
+    <MESSAGE value="WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
