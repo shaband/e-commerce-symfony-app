@@ -3,11 +3,14 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Enum\GenderEnum;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -24,7 +27,12 @@ class RegistrationFormType extends AbstractType
             ->add('lastName',TextType::class)
             ->add('email',EmailType::class)
             ->add('phone',TextType::class)
-            ->add('plainPassword', PasswordType::class, [
+            ->add('birthdate',BirthdayType::class)
+            ->add('gender', EnumType::class,[
+                'class'=> GenderEnum::class,
+            ])
+            ->add('plainPassword', RepeatedType::class, [
+                'type' => PasswordType::class,
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
@@ -41,14 +49,14 @@ class RegistrationFormType extends AbstractType
                     ),
                 ],
             ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new IsTrue(
-                        message: 'You should agree to our terms.',
-                    ),
-                ],
-            ])
+//            ->add('agreeTerms', CheckboxType::class, [
+//                'mapped' => false,
+//                'constraints' => [
+//                    new IsTrue(
+//                        message: 'You should agree to our terms.',
+//                    ),
+//                ],
+//            ])
         ;
     }
 

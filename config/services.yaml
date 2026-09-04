@@ -31,3 +31,20 @@ services:
                 credentials:
                     key: '%env(AWS_ACCESS_KEY_ID)%'
                     secret: '%env(AWS_SECRET_ACCESS_KEY)%'
+
+    my.oauth_aware.user_provider.entity:
+        class: App\Security\OAuthUserProvider
+        autowire: true
+        arguments:
+            $userRepository: '@App\Repository\UserRepository'
+
+    my.oauth_aware.user_provider.service:
+        class: HWI\Bundle\OAuthBundle\Security\Core\User\EntityUserProvider
+
+        arguments:
+            $class: App\Entity\User
+            $properties:
+                google: googleId
+                github: githubId
+
+

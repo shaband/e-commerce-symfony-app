@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -44,12 +45,22 @@ class Category
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $cover = null;
-    #[Vich\UploadableField(mapping: 'category_images', fileNameProperty: 'cover',)]
+    #[Vich\UploadableField(mapping: 'category_images', fileNameProperty: 'cover',size: 'coverSize')]
+    #[Assert\Image(
+        maxSize: '5M',
+        maxSizeMessage: 'The uploaded image is too large ({{ size }} {{ suffix }}). Allowed maximum is {{ limit }} {{ suffix }}.'
+    )]
     private ?File $coverFile = null;
     #[ORM\Column(type: Types::INTEGER, nullable: true)]
     private ?int $coverSize = null;
-    #[ORM\Column(name: 'category_group', enumType: CategoryGroupEnum::class, options: ['default' => CategoryGroupEnum::Main])]
+    #[ORM\Column(name: 'category_group', enumType: CategoryGroupEnum::class)]
     private CategoryGroupEnum $category_group = CategoryGroupEnum::Main;
+
+    #[ORM\Column(options: ['default' => false])]
+    private ?bool $showChildrenInHome = null;
+
+    #[ORM\Column(options: ['default' => false])]
+    private ?bool $showProductsInHome = null;
 
 
 
@@ -189,13 +200,37 @@ class Category
         return $this->coverFile;
     }
 
-    public function setImageSize(?int $imageSize): void
+    public function setCoverSize(?int $coverSize): void
     {
-        $this->coverSize = $imageSize;
+        $this->coverSize = $coverSize;
     }
 
-    public function getImageSize(): ?int
+    public function getCoverSize(): ?int
     {
         return $this->coverSize;
+    }
+
+    public function isShowChildrenInHome(): ?bool
+    {
+        return $this->showChildrenInHome;
+    }
+
+    public function setShowChildrenInHome(bool $showChildrenInHome): static
+    {
+        $this->showChildrenInHome = $showChildrenInHome;
+
+        return $this;
+    }
+
+    public function isShowProductsInHome(): ?bool
+    {
+        return $this->showProductsInHome;
+    }
+
+    public function setShowProductsInHome(bool $showProductsInHome): static
+    {
+        $this->showProductsInHome = $showProductsInHome;
+
+        return $this;
     }
 }

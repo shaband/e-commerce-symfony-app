@@ -2,6 +2,7 @@
 
 namespace App\Controller\Site;
 
+use App\Repository\CategoryRepository;
 use App\Repository\SliderRepository;
 use App\Repository\SponsorRepository;
 use App\Repository\TestimonialRepository;
@@ -15,14 +16,19 @@ final class IndexController extends AbstractController
     public function index(
         SliderRepository $sliderRepository,
         TestimonialRepository $testimonialRepository,
-        SponsorRepository $sponsorsRepository
+        SponsorRepository $sponsorsRepository,
+        CategoryRepository $categoryRepository,
     ): Response
+
+
+
     {
         return $this->render('site/index/index.html.twig', [
             'controller_name' => 'IndexController',
             'sliders' => $sliderRepository->findAllActive(),
             'testimonials' => $testimonialRepository->findAllActive(),
             'sponsors' => $sponsorsRepository->findAllActive(),
+            'categories' => $categoryRepository->findAllCategoriesInHome(),
         ]);
     }
 }

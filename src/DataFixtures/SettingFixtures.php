@@ -28,6 +28,31 @@ class SettingFixtures extends Fixture implements FixtureGroupInterface
                 'type' => 'text',
                 'value' => '0125862552',
             ],
+            [
+                'name' => 'Address',
+                'type' => 'text',
+                'value' => '4247 Ashford Drive Virginia VA-20006 USA',
+            ],
+            [
+                'name' => 'Facebook',
+                'type' => 'text',
+                'value' => 'https://www.facebook.com/ShoppingApp',
+            ],
+            [
+                'name' => 'Youtube',
+                'type' => 'text',
+                'value' => 'https://www.youtube.com/ShoppingApp',
+            ],
+            [
+                'name' => 'instagram',
+                'type' => 'text',
+                'value' => 'https://www.instagram.com/ShoppingApp',
+            ],
+            [
+                'name' => 'Twitter (X)',
+                'type' => 'text',
+                'value' => 'https://www.x.com/ShoppingApp',
+            ],
         ];
         foreach ($data as $datum) {
             $setting = $manager->getRepository(Setting::class)->findOneBy(['keyName' => $datum['name']]);

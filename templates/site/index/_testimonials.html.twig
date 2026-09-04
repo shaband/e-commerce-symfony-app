@@ -24,11 +24,11 @@
             <!--====== Testimonial Slider ======-->
             <div class="slider-fouc">
                 <div class="owl-carousel" id="testimonial-slider">
-                    {% for testimonal in testimonials) %}
+                    {% for testimonal in testimonials %}
                     <div class="testimonial">
                         <div class="testimonial__img-wrap">
 
-                            <img class="testimonial__img" src="{{ testimonal.avatar }}" alt=""></div>
+                            <img class="testimonial__img" src="{{ 'uploads/testimonial/avatars/'~testimonal.avatar }}" alt=""></div>
                         <div class="testimonial__content-wrap">
 
                             <span class="testimonial__double-quote"><i class="fas fa-quote-right"></i></span>

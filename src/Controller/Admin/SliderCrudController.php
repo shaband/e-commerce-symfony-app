@@ -27,12 +27,12 @@ class SliderCrudController extends AbstractCrudController
         yield TextField::new('description')->setRequired(false)->setColumns(12);
         yield BooleanField::new('is_active')->setRequired(false)->setColumns(12);
         yield UrlField::new('url')->setRequired(false)->setColumns(12);
+
         yield ImageField::new('cover')->setColumns(12)
             ->setBasePath('uploads/sliders/') // The public URL path used to display the image
             ->setUploadDir('public/uploads/sliders/') // The relative system path where files are saved
             ->setRequired(false)
             ->setUploadedFileNamePattern('[slug]-[randomhash].[extension]');
-//            ->onlyOnForms();
     }
 
 }

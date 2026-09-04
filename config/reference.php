@@ -1086,6 +1086,32 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *             cache_pool?: string|Param, // The cache pool to use for storing the limiter state // Default: "cache.rate_limiter"
  *             storage_service?: string|Param, // The service ID of a custom storage implementation, this precedes any configured "cache_pool" // Default: null
  *         },
+ *         oauth?: array{
+ *             provider?: scalar|Param|null,
+ *             remember_me?: bool|Param, // Default: true
+ *             success_handler?: scalar|Param|null,
+ *             failure_handler?: scalar|Param|null,
+ *             check_path?: scalar|Param|null, // Default: "/login_check"
+ *             use_forward?: bool|Param, // Default: false
+ *             login_path?: scalar|Param|null,
+ *             always_use_default_target_path?: bool|Param, // Default: false
+ *             default_target_path?: scalar|Param|null, // Default: "/"
+ *             target_path_parameter?: scalar|Param|null, // Default: "_target_path"
+ *             use_referer?: bool|Param, // Default: false
+ *             failure_path?: scalar|Param|null, // Default: null
+ *             failure_forward?: bool|Param, // Default: false
+ *             failure_path_parameter?: scalar|Param|null, // Default: "_failure_path"
+ *             oauth_user_provider?: array{
+ *                 orm?: array{
+ *                     class?: scalar|Param|null,
+ *                     manager_name?: scalar|Param|null, // Default: null
+ *                     properties?: array<string, scalar|Param|null>,
+ *                 },
+ *                 service?: scalar|Param|null,
+ *                 oauth?: scalar|Param|null,
+ *             },
+ *             resource_owners?: array<string, scalar|Param|null>,
+ *         },
  *         x509?: array{
  *             provider?: scalar|Param|null,
  *             user?: scalar|Param|null, // Default: "SSL_CLIENT_S_DN_Email"
@@ -1747,6 +1773,47 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         db_driver?: scalar|Param|null, // Default: null
  *     }>,
  * }
+ * @psalm-type SymfonycastsResetPasswordConfig = array{
+ *     request_password_repository?: scalar|Param|null, // A class that implements ResetPasswordRequestRepositoryInterface - usually your ResetPasswordRequestRepository.
+ *     lifetime?: int|Param, // The length of time in seconds that a password reset request is valid for after it is created. // Default: 3600
+ *     throttle_limit?: int|Param, // Another password reset cannot be made faster than this throttle time in seconds. // Default: 3600
+ *     enable_garbage_collection?: bool|Param, // Enable/Disable automatic garbage collection. // Default: true
+ * }
+ * @psalm-type HwiOauthConfig = array{
+ *     firewall_names?: list<scalar|Param|null>,
+ *     target_path_parameter?: scalar|Param|null, // Default: null
+ *     target_path_domains_whitelist?: list<scalar|Param|null>,
+ *     use_referer?: bool|Param, // Default: false
+ *     failed_use_referer?: bool|Param, // Default: false
+ *     failed_auth_path?: scalar|Param|null, // Default: "hwi_oauth_connect"
+ *     grant_rule?: scalar|Param|null, // Default: "IS_AUTHENTICATED_REMEMBERED"
+ *     connect?: array{
+ *         confirmation?: bool|Param, // Default: true
+ *         account_connector?: scalar|Param|null,
+ *         registration_form_handler?: scalar|Param|null,
+ *         registration_form?: scalar|Param|null,
+ *     },
+ *     resource_owners?: array<string, array{ // Default: []
+ *         base_url?: scalar|Param|null,
+ *         access_token_url?: scalar|Param|null,
+ *         authorization_url?: scalar|Param|null,
+ *         request_token_url?: scalar|Param|null,
+ *         revoke_token_url?: scalar|Param|null,
+ *         infos_url?: scalar|Param|null,
+ *         client_id?: scalar|Param|null,
+ *         client_secret?: scalar|Param|null,
+ *         realm?: scalar|Param|null,
+ *         scope?: scalar|Param|null,
+ *         user_response_class?: scalar|Param|null,
+ *         service?: scalar|Param|null,
+ *         class?: scalar|Param|null,
+ *         type?: scalar|Param|null,
+ *         use_authorization_to_get_token?: scalar|Param|null,
+ *         paths?: array<string, mixed>,
+ *         options?: array<string, scalar|Param|null>,
+ *         ...<string, mixed>
+ *     }>,
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1766,6 +1833,8 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     webpack_encore?: WebpackEncoreConfig,
  *     flysystem?: FlysystemConfig,
  *     vich_uploader?: VichUploaderConfig,
+ *     symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
+ *     hwi_oauth?: HwiOauthConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1789,6 +1858,8 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         webpack_encore?: WebpackEncoreConfig,
  *         flysystem?: FlysystemConfig,
  *         vich_uploader?: VichUploaderConfig,
+ *         symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
+ *         hwi_oauth?: HwiOauthConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1809,6 +1880,8 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         webpack_encore?: WebpackEncoreConfig,
  *         flysystem?: FlysystemConfig,
  *         vich_uploader?: VichUploaderConfig,
+ *         symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
+ *         hwi_oauth?: HwiOauthConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1831,6 +1904,8 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         webpack_encore?: WebpackEncoreConfig,
  *         flysystem?: FlysystemConfig,
  *         vich_uploader?: VichUploaderConfig,
+ *         symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
+ *         hwi_oauth?: HwiOauthConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,

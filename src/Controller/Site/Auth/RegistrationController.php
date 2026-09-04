@@ -25,15 +25,30 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+
+
         if ($this->getUser()) {
             $this->addFlash('warning', 'You are already logged in.');
             return $this->redirectToRoute('app_home');
         }
+
+        $data = $request->getSession()->get('oauth_pending_registration');
         $user = new User();
+        $user->setEmail($data['email']??""); // pre-fill
+        $user->setFirstName($data['firstName']??$data['name']??"");
+        $user->setLastName($data['lastName']??"");
+        $user->setAvatar($data['avatar']??"");
+
+
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $setter = 'set' . ucfirst($data['service']) . 'Id';
+            $user->$setter($data['providerId']);
+
+
             /** @var string $plainPassword */
             $plainPassword = $form->get('plainPassword')->getData();
 
@@ -42,6 +57,7 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
+            $request->getSession()->remove('oauth_pending_registration');
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,

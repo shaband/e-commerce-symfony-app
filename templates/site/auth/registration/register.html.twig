@@ -1,27 +1,153 @@
-{% extends 'base.html.twig' %}
+{% extends 'site/layout/base.html.twig' %}
+{% block content %}
+    <!--====== App Content ======-->
+    <div class="app-content">
 
-{% block title %}Register{% endblock %}
+        <!--====== Section 1 ======-->
+        <div class="u-s-p-y-60">
 
-{% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+            <!--====== Section Content ======-->
+            <div class="section__content">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <div class="breadcrumb__wrap">
+                            <ul class="breadcrumb__list">
+                                <li class="has-separator">
 
-    <h1>Register</h1>
+                                    <a href="{{ path('app_index') }}">Home</a></li>
+                                <li class="is-marked">
 
-    {{ form_errors(registrationForm) }}
+                                    <a href="{{ path('app_register') }}">Signup</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section 1 ======-->
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.firstName) }}
-    {{ form_row(registrationForm.lastName) }}
 
-    {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.phone) }}
-    {{ form_row(registrationForm.plainPassword, {
-        label: 'Password'
-    }) }}
-    {{ form_row(registrationForm.agreeTerms) }}
+        <!--====== Section 2 ======-->
+        <div class="u-s-p-b-60">
 
-    <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+            <!--====== Section Intro ======-->
+            <div class="section__intro u-s-m-b-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section__text-wrap">
+                                <h1 class="section__heading u-c-secondary">CREATE AN ACCOUNT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====== End - Section Intro ======-->
+
+
+            <!--====== Section Content ======-->
+            <div class="section__content">
+                <div class="container">
+                    <div class="row row--center">
+                        <div class="col-lg-6 col-md-8 u-s-m-b-30">
+                            <div class="l-f-o">
+                                <div class="l-f-o__pad-box">
+                                    <h1 class="gl-h1">PERSONAL INFORMATION</h1>
+                                    {{ form_start(registrationForm,{'attr':{'class':'l-f-o__form'}}) }}
+                                    {{ form_errors(registrationForm) }}
+                                    {#                                <form class="l-f-o__form"> #}
+                                    {# <div class="gl-s-api">
+                                        <div class="u-s-m-b-15">
+
+                                            <button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i class="fab fa-facebook-f"></i>
+
+                                                <span>Signup with Facebook</span></button></div>
+                                        <div class="u-s-m-b-30">
+
+                                            <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i class="fab fa-google"></i>
+
+                                                <span>Signup with Google</span></button></div>
+                                    </div> #}
+                                    <div class="u-s-m-b-30">
+                                        {{ form_row(registrationForm.firstName,{
+                                            'label':'FIRST NAME *',
+                                            'attr':{'class':'input-text input-text--primary-style','placeholder':'First Name'},
+                                            'label_attr':{'class':'gl-label'}
+                                        }) }}
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        {{ form_row(registrationForm.lastName,{
+                                            'label':'LAST NAME *',
+                                            'attr':{'class':'input-text input-text--primary-style','placeholder':'LAST Name *'},
+                                            'label_attr':{'class':'gl-label'}
+                                        }) }}
+                                    </div>
+                                    <div class="gl-inline">
+                                        <div class="u-s-m-b-30">
+                                            {{ form_row(registrationForm.birthdate,{
+                                                'label':'BIRTHDATE',
+                                                'attr':{'class':'input-text input-text--primary-style','placeholder':'Birthdate'},
+                                                'label_attr':{'class':'gl-label'}
+                                            }) }}
+                                        </div>
+                                        <div class="u-s-m-b-30">
+                                            {{ form_row(registrationForm.gender,{
+                                                'label':'GENDER',
+                                                'label_attr':{'class':'gl_label'},
+                                                'attr':{'class':'select-box select-box--primary-style u-w-100'}
+                                            }) }}
+                                        </div>
+                                    </div>
+                                    <div class="u-s-m-b-30">
+                                        {{ form_row(registrationForm.email,{
+                                            'label':'EMAIL *',
+                                            'label_attr':{'class':'gl-label'},
+                                            'attr':{'class':'input-text input-text--primary-style'}
+                                        }) }}
+
+                                    </div>
+                                    <div class="u-s-m-b-30">
+                                        {{ form_row(registrationForm.phone,{
+                                            'label':'PHONE *',
+                                            'label_attr':{'class':'gl-label'},
+                                            'attr':{'class':'input-text input-text--primary-style'}
+                                        }) }}
+
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        {{ form_row(registrationForm.plainPassword.first,{
+                                            'label':'PASSWORD *',
+                                            'label_attr':{'class':'gl_label'},
+                                            'attr':{'class':'input-text input-text--primary-style'}
+                                        }) }}
+                                    </div>
+                                    <div class="u-s-m-b-30">
+
+                                        {{ form_row(registrationForm.plainPassword.second,{
+                                            'label':'PASSWORD  CONFIRMATION*',
+                                            'label_attr':{'class':'gl_label'},
+                                            'attr':{'class':'input-text input-text--primary-style'}
+                                        }) }}
+                                    </div>
+                                    <div class="u-s-m-b-15">
+
+                                        <button class="btn btn--e-transparent-brand-b-2" type="submit">CREATE
+                                        </button>
+                                    </div>
+
+                                    <a class="gl-link" href="{{ path('app_index') }}">Return to Store</a>
+                                    {{ form_end(registrationForm) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====== End - Section Content ======-->
+        </div>
+        <!--====== End - Section 2 ======-->
+    </div>
+    <!--====== End - App Content ======-->
 {% endblock %}

@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
 use EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -63,19 +64,24 @@ class CategoryCrudController extends AbstractCrudController
                 'hx-trigger' => 'change',
                 'hx-swap' => 'innerHTML',
                 'hx-target' => '.parent_category',
+                'onChange'=>'toggleDependentSwitch(this.value)',
             ]);
 
         yield TextEditorField::new('description')->setRequired(false)->setColumns(12);
 
 
+        yield BooleanField::new('showChildrenInHome')->setCssClass('showChildrenInHome')->setColumns(3)->onlyOnForms();
+        yield BooleanField::new('showProductsInHome')->setCssClass('showProductsInHome')->setColumns(3)->onlyOnForms();
         yield Field::new('coverFile', 'Cover')
             ->setFormType(VichImageType::class)
             ->setRequired(false)
+
             ->setColumns(12)
             ->onlyOnForms();
 
         yield ImageField::new('cover')
             ->setBasePath($this->bucket . '/category-images')
+
             ->onlyOnIndex();
 
     }

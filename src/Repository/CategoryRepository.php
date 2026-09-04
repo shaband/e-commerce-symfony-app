@@ -52,4 +52,15 @@ class CategoryRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findAllCategoriesInHome()
+    {
+        return $this->createQueryBuilder('c')
+            ->leftJoin('c.children', 'children')
+            ->addSelect('children','children')
+            ->Where('c.showChildrenInHome = :showChildrenInHome')
+            ->setParameter('showChildrenInHome', true)
+            ->orWhere('c.showProductsInHome = :showProductsInHome')
+            ->setParameter('showProductsInHome', true)->getQuery()->getResult();
+    }
 }

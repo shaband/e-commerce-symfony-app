@@ -4,7 +4,7 @@
     <div class="owl-carousel primary-style-2" id="hero-slider">
 
         {% for slider in sliders %}
-        <div class="hero-slide hero-slide--{{ slider.id }}">
+        <div class="hero-slide hero-slide--{{ slider.id }}" style="background-image: url('{{'uploads/sliders/'~slider.cover }}') ;">
             <div class="primary-style-2-container">
                 <div class="row">
                     <div class="col-12">

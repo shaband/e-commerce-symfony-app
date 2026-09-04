@@ -16,10 +16,16 @@
                 </div>
 
                 <!--====== Section 1 ======-->
+                {% for category in categories %}
+                    {% if category.showChildrenInHome %}
+                        {% include 'site/index/_category.html.twig' %}
+                    {% endif %}
 
-                {% include 'site/index/_category.html.twig' %}
-                {% include 'site/index/_category_tab.html.twig' %}
+{#                    {% if categories.showProductsInHome %}#}
+{#                        {% include 'site/index/_category_tab.html.twig' %}#}
 
+{#                    {% endif %}#}
+                {% endfor %}
 
                 <!--====== Section 10 ======-->
                 <div class="u-s-p-b-60">
