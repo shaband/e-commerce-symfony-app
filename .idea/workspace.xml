@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc809fa0-2a77-4a6e-b803-b13a7c9e14e9" name="Changes" comment="WIP">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.dev" beforeDir="false" afterPath="$PROJECT_DIR$/.env.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Symfony.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Symfony.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+    <list default="true" id="fc809fa0-2a77-4a6e-b803-b13a7c9e14e9" name="Changes" comment="add profile page">
+      <change afterPath="$PROJECT_DIR$/.env.dev" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,61 +44,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000348133458212" />
-      <entry key="MS500" value="1.128336193215" />
-      <entry key="S2" value="1.5985322483262203" />
-      <entry key="S5" value="1.8170615941698025" />
-      <entry key="S10" value="1.9540806820602006" />
-      <entry key="S30" value="2.347994627420153" />
-      <entry key="S60" value="2.8648735919843746" />
-      <entry key="M2" value="4.843153914992967" />
-      <entry key="M5" value="12.269732018360521" />
-      <entry key="M10" value="21.493915719102368" />
-      <entry key="M15" value="27.608294625664055" />
-      <entry key="M30" value="37.705082809310646" />
-      <entry key="H1" value="45.80110828453416" />
-      <entry key="H2" value="51.230421676136665" />
-      <entry key="H4" value="55.03873872584282" />
-      <entry key="D1" value="137.4428090121873" />
-      <entry key="W1" value="1439.8997765662616" />
+      <entry key="MS100" value="1.8321819668792" />
+      <entry key="MS500" value="3.952843051689556" />
+      <entry key="S2" value="5.910989342184148" />
+      <entry key="S5" value="6.527736463078166" />
+      <entry key="S10" value="6.764373823728486" />
+      <entry key="S30" value="7.841061962980775" />
+      <entry key="S60" value="10.336863387008146" />
+      <entry key="M2" value="13.561703062833528" />
+      <entry key="M5" value="16.877312722802863" />
+      <entry key="M10" value="18.358854207405848" />
+      <entry key="M15" value="19.165120295060124" />
+      <entry key="M30" value="23.18411999971795" />
+      <entry key="H1" value="34.66729483827911" />
+      <entry key="H2" value="53.85214569815419" />
+      <entry key="H4" value="77.39156872818441" />
+      <entry key="D1" value="281.7427800065517" />
+      <entry key="W1" value="1638.9835568009423" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="1.993202001728661E-74" />
-      <entry key="S2" value="5.734776795828225E-19" />
-      <entry key="S5" value="7.582717474292557E-8" />
-      <entry key="S10" value="3.8963655914302437E-4" />
-      <entry key="S30" value="0.13358570478916507" />
-      <entry key="S60" value="0.7730618910759728" />
-      <entry key="M2" value="2.6070676905810473" />
-      <entry key="M5" value="7.406877806491213" />
-      <entry key="M10" value="11.944104800995008" />
-      <entry key="M15" value="14.557477460203193" />
-      <entry key="M30" value="18.541095383024636" />
-      <entry key="H1" value="21.57367365815713" />
-      <entry key="H2" value="23.558852762307318" />
-      <entry key="H4" value="24.84585906624792" />
-      <entry key="D1" value="39.34455021160086" />
-      <entry key="W1" value="261.8346807681819" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="1.448260149971793E-209" />
+      <entry key="S30" value="5.818416349641169E-70" />
+      <entry key="S60" value="4.7940768700716183E-35" />
+      <entry key="M2" value="1.4106978838953014E-17" />
+      <entry key="M5" value="5.589748833533444E-7" />
+      <entry key="M10" value="0.002479975806360434" />
+      <entry key="M15" value="0.04297105925936298" />
+      <entry key="M30" value="0.772047394418625" />
+      <entry key="H1" value="3.6138522830291677" />
+      <entry key="H2" value="9.329750446885807" />
+      <entry key="H4" value="17.018646026189103" />
+      <entry key="D1" value="68.03538333191021" />
+      <entry key="W1" value="320.09891611973546" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9659701902978945" />
-      <entry key="MS500" value="1.1207190111504353" />
-      <entry key="S2" value="1.595971672460537" />
-      <entry key="S5" value="1.8157909694726486" />
-      <entry key="S10" value="1.9526063365676891" />
-      <entry key="S30" value="2.4746458858668636" />
-      <entry key="S60" value="3.6218858321517984" />
-      <entry key="M2" value="7.418149622964182" />
-      <entry key="M5" value="19.62952859179405" />
-      <entry key="M10" value="33.394103749362465" />
-      <entry key="M15" value="42.12792822359551" />
-      <entry key="M30" value="56.220591152349144" />
-      <entry key="H1" value="67.35949104274128" />
-      <entry key="H2" value="74.78082850387999" />
-      <entry key="H4" value="79.88009853245724" />
-      <entry key="D1" value="176.78601900792276" />
-      <entry key="W1" value="1701.7330550121517" />
+      <entry key="MS100" value="1.7314535910159052" />
+      <entry key="MS500" value="3.907862999121162" />
+      <entry key="S2" value="5.894031771054001" />
+      <entry key="S5" value="6.520240283133727" />
+      <entry key="S10" value="6.76048678046092" />
+      <entry key="S30" value="7.8394859342306" />
+      <entry key="S60" value="10.335766594807392" />
+      <entry key="M2" value="13.56096578956343" />
+      <entry key="M5" value="16.876943336844572" />
+      <entry key="M10" value="18.36112249184842" />
+      <entry key="M15" value="19.207843174430657" />
+      <entry key="M30" value="23.955203925807453" />
+      <entry key="H1" value="38.27911032530465" />
+      <entry key="H2" value="63.17929665550044" />
+      <entry key="H4" value="94.40778976070754" />
+      <entry key="D1" value="349.7761226778374" />
+      <entry key="W1" value="1959.0808777285977" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php">
@@ -269,6 +260,10 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
       <path value="$PROJECT_DIR$/vendor/hwi/oauth-bundle" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher-toastr" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher-symfony" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher-toastr-symfony" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -280,33 +275,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Composer Script.auto-scripts.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/run/media/shaband/HDD1/code/php/Symfony/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Composer Script.auto-scripts.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "disable.download.node.interpreter.editor.notification": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/run/media/shaband/HDD1/code/php/Symfony",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Twig"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/templates/profile" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/templates/site/index" />
     </key>
@@ -357,7 +360,7 @@
       <workItem from="1787937064673" duration="22986000" />
       <workItem from="1788202653437" duration="3682000" />
       <workItem from="1788207320950" duration="6244000" />
-      <workItem from="1788538103328" duration="2559000" />
+      <workItem from="1788538103328" duration="25889000" />
     </task>
     <task id="LOCAL-00001" summary="WIP working on home page">
       <option name="closed" value="true" />
@@ -391,7 +394,39 @@
       <option name="project" value="LOCAL" />
       <updated>1788541095293</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1788541380385</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1788541380385</updated>
+    </task>
+    <task id="LOCAL-00006" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1788541397534</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1788541397534</updated>
+    </task>
+    <task id="LOCAL-00007" summary="WIP">
+      <option name="closed" value="true" />
+      <created>1788541419441</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1788541419441</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add profile page">
+      <option name="closed" value="true" />
+      <created>1788735873474</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1788735873474</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +436,8 @@
     <MESSAGE value="WIP working on home page" />
     <MESSAGE value="WIP fix issue in show image of category in edit" />
     <MESSAGE value="WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP" />
+    <MESSAGE value="add profile page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add profile page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -86,7 +86,7 @@ security:
         - { path: ^/home, roles: ROLE_USER }     # must be logged in
         - { path: ^/admin/login, roles: PUBLIC_ACCESS }   # allow login page
         - { path: ^/admin,       roles: ROLE_USER }      # lock all /admin/*
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
     security:

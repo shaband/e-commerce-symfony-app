@@ -25,7 +25,9 @@ class RegistrationController extends AbstractController
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
-
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_index');
+        }
 
         if ($this->getUser()) {
             $this->addFlash('warning', 'You are already logged in.');
@@ -70,7 +72,10 @@ class RegistrationController extends AbstractController
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_register');
+        }
+        if ($form->isSubmitted() && !$form->isValid()) {
+            flash()->error('Validation failed. Please check the form for errors.');
         }
 
         return $this->render('/site/auth/registration/register.html.twig', [

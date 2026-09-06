@@ -11,18 +11,21 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 final class LoginController extends AbstractController
 {
-    #[AdminRoute('/login',  name: 'login')]
-     public function index(AuthenticationUtils $authenticationUtils): Response
-{
-             // get the login error if there is one
-             $error = $authenticationUtils->getLastAuthenticationError();
+    #[AdminRoute('/login', name: 'login')]
+    public function index(AuthenticationUtils $authenticationUtils): Response
+    {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('app_home');
+        }
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
 
-             // last username entered by the user
-             $lastUsername = $authenticationUtils->getLastUsername();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render('admin/auth/login/index.html.twig', [
             'last_username' => $lastUsername,
-            'error'         => $error,
-            ]);
+            'error' => $error,
+        ]);
     }
 }
