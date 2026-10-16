@@ -37,3 +37,4 @@ let category_group_choice=document.getElementById("Category_category_group")
     toggleDependentSwitch(category_group_choice.value)
 
 })
+

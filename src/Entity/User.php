@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Enum\GenderEnum;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -64,6 +66,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $googleId = null;
+
+    /**
+     * @var Collection<int, ProductReview>
+     */
+    #[ORM\OneToMany(targetEntity: ProductReview::class, mappedBy: 'reviewer')]
+    private Collection $productReviews;
+
+    /**
+     * @var Collection<int, Product>
+     */
+    #[ORM\ManyToMany(targetEntity: Product::class, mappedBy: 'favorites')]
+    private Collection $Favorites;
+
+    public function __construct()
+    {
+        $this->productReviews = new ArrayCollection();
+        $this->Favorites = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -247,6 +267,63 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setGoogleId(?string $googleId): static
     {
         $this->googleId = $googleId;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ProductReview>
+     */
+    public function getProductReviews(): Collection
+    {
+        return $this->productReviews;
+    }
+
+    public function addProductReview(ProductReview $productReview): static
+    {
+        if (!$this->productReviews->contains($productReview)) {
+            $this->productReviews->add($productReview);
+            $productReview->setReviewer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductReview(ProductReview $productReview): static
+    {
+        if ($this->productReviews->removeElement($productReview)) {
+            // set the owning side to null (unless already changed)
+            if ($productReview->getReviewer() === $this) {
+                $productReview->setReviewer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getFavorites(): Collection
+    {
+        return $this->Favorites;
+    }
+
+    public function addFavorite(Product $favorite): static
+    {
+        if (!$this->Favorites->contains($favorite)) {
+            $this->Favorites->add($favorite);
+            $favorite->addFavorite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavorite(Product $favorite): static
+    {
+        if ($this->Favorites->removeElement($favorite)) {
+            $favorite->removeFavorite($this);
+        }
 
         return $this;
     }

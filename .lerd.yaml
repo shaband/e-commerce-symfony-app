@@ -1,9 +1,9 @@
 domains:
-    - symfony
+  - symfony
 php_version: "8.5"
 framework: symfony
 secured: true
 services:
-    - postgres
-    - mailpit
-    - redis
+  - mailpit
+  - postgres
+  - redis
