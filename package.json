@@ -20,10 +20,15 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@imacrayon/alpine-ajax": "^0.12.7",
         "@symfony/stimulus-bridge": "^4.0.1",
         "@tailwindcss/postcss": "^4.3.3",
+        "alpinejs": "^3.17.4",
+        "htmx": "^0.0.2",
+        "htmx.org": "^2.0.10",
         "postcss": "^8.5.28",
         "postcss-loader": "^8.2.1",
-        "tailwindcss": "^4.3.3"
+        "tailwindcss": "^4.3.3",
+        "tom-select": "^2.6.2"
     }
 }

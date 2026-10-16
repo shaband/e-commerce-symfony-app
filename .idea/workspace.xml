@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc809fa0-2a77-4a6e-b803-b13a7c9e14e9" name="Changes" comment="add profile page">
-      <change afterPath="$PROJECT_DIR$/.env.dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +29,7 @@
     </execution>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1852" />
+    <option name="cachedIndexableFilesCount" value="1918" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,61 +48,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.8321819668792" />
-      <entry key="MS500" value="3.952843051689556" />
-      <entry key="S2" value="5.910989342184148" />
-      <entry key="S5" value="6.527736463078166" />
-      <entry key="S10" value="6.764373823728486" />
-      <entry key="S30" value="7.841061962980775" />
-      <entry key="S60" value="10.336863387008146" />
-      <entry key="M2" value="13.561703062833528" />
-      <entry key="M5" value="16.877312722802863" />
-      <entry key="M10" value="18.358854207405848" />
-      <entry key="M15" value="19.165120295060124" />
-      <entry key="M30" value="23.18411999971795" />
-      <entry key="H1" value="34.66729483827911" />
-      <entry key="H2" value="53.85214569815419" />
-      <entry key="H4" value="77.39156872818441" />
-      <entry key="D1" value="281.7427800065517" />
-      <entry key="W1" value="1638.9835568009423" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0000000000001248" />
+      <entry key="M2" value="1.0000006402339092" />
+      <entry key="M5" value="1.0201288746774935" />
+      <entry key="M10" value="1.8682198051556358" />
+      <entry key="M15" value="4.198639000486744" />
+      <entry key="M30" value="14.789654910349727" />
+      <entry key="H1" value="36.67710567414169" />
+      <entry key="H2" value="64.99465071523821" />
+      <entry key="H4" value="90.56543975022672" />
+      <entry key="D1" value="258.7684708327252" />
+      <entry key="W1" value="1609.84249590113" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
-      <entry key="S10" value="1.448260149971793E-209" />
-      <entry key="S30" value="5.818416349641169E-70" />
-      <entry key="S60" value="4.7940768700716183E-35" />
-      <entry key="M2" value="1.4106978838953014E-17" />
-      <entry key="M5" value="5.589748833533444E-7" />
-      <entry key="M10" value="0.002479975806360434" />
-      <entry key="M15" value="0.04297105925936298" />
-      <entry key="M30" value="0.772047394418625" />
-      <entry key="H1" value="3.6138522830291677" />
-      <entry key="H2" value="9.329750446885807" />
-      <entry key="H4" value="17.018646026189103" />
-      <entry key="D1" value="68.03538333191021" />
-      <entry key="W1" value="320.09891611973546" />
+      <entry key="S10" value="1.8810860961390487E-269" />
+      <entry key="S30" value="6.590991254024455E-90" />
+      <entry key="S60" value="5.1236223342890665E-45" />
+      <entry key="M2" value="1.4308215851963098E-22" />
+      <entry key="M5" value="4.20159475902965E-9" />
+      <entry key="M10" value="1.2963663028646056E-4" />
+      <entry key="M15" value="0.004066022175449481" />
+      <entry key="M30" value="0.12753043137025252" />
+      <entry key="H1" value="0.7142276892485586" />
+      <entry key="H2" value="1.6913753441809005" />
+      <entry key="H4" value="2.7879612006236463" />
+      <entry key="D1" value="35.824109170387246" />
+      <entry key="W1" value="291.4885769321464" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.7314535910159052" />
-      <entry key="MS500" value="3.907862999121162" />
-      <entry key="S2" value="5.894031771054001" />
-      <entry key="S5" value="6.520240283133727" />
-      <entry key="S10" value="6.76048678046092" />
-      <entry key="S30" value="7.8394859342306" />
-      <entry key="S60" value="10.335766594807392" />
-      <entry key="M2" value="13.56096578956343" />
-      <entry key="M5" value="16.876943336844572" />
-      <entry key="M10" value="18.36112249184842" />
-      <entry key="M15" value="19.207843174430657" />
-      <entry key="M30" value="23.955203925807453" />
-      <entry key="H1" value="38.27911032530465" />
-      <entry key="H2" value="63.17929665550044" />
-      <entry key="H4" value="94.40778976070754" />
-      <entry key="D1" value="349.7761226778374" />
-      <entry key="W1" value="1959.0808777285977" />
+      <entry key="MS100" value="0.34868591658760134" />
+      <entry key="MS500" value="0.8100034736320458" />
+      <entry key="S2" value="0.9486843151404539" />
+      <entry key="S5" value="0.9791487822615405" />
+      <entry key="S10" value="0.9895194703802146" />
+      <entry key="S30" value="0.996494213953598" />
+      <entry key="S60" value="0.9982455679610339" />
+      <entry key="M2" value="0.9991230390952078" />
+      <entry key="M5" value="1.019777306743023" />
+      <entry key="M10" value="1.8681622790495775" />
+      <entry key="M15" value="4.202529615753717" />
+      <entry key="M30" value="14.916588294538265" />
+      <entry key="H1" value="37.38993439990018" />
+      <entry key="H2" value="66.68444174070159" />
+      <entry key="H4" value="93.35217590819671" />
+      <entry key="D1" value="294.5913331776142" />
+      <entry key="W1" value="1901.3295967084428" />
     </decayedShown>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/bin/php">
@@ -275,37 +279,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Composer Script.auto-scripts.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "disable.download.node.interpreter.editor.notification": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/run/media/shaband/HDD1/code/php/Symfony",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Composer Script.auto-scripts.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;disable.download.node.interpreter.editor.notification&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/run/media/shaband/HDD1/code/php/Symfony&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Twig"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Twig&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -361,6 +365,9 @@
       <workItem from="1788202653437" duration="3682000" />
       <workItem from="1788207320950" duration="6244000" />
       <workItem from="1788538103328" duration="25889000" />
+      <workItem from="1789583712930" duration="6553000" />
+      <workItem from="1789770203404" duration="3138000" />
+      <workItem from="1789821920220" duration="5550000" />
     </task>
     <task id="LOCAL-00001" summary="WIP working on home page">
       <option name="closed" value="true" />
